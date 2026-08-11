@@ -1,2 +1,2 @@
-# ESP-RotaryCell
+# RotaryCell
 Open Cellular Telephony for Classic Telephones
