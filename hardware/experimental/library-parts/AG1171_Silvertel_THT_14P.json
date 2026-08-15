@@ -1,0 +1,89 @@
+{
+  "head": {
+    "docType": "4",
+    "editorVersion": "6.5.57",
+    "newgId": true,
+    "c_para": {
+      "package": "AG1171_Silvertel_THT_14P",
+      "name": "AG1171_Silvertel_THT_14P",
+      "pre": "U"
+    },
+    "hasIdFlag": true
+  },
+  "canvas": "CA~1000~1000~#000000~yes~#FFFFFF~10~1000~1000~line~0.5~mil~1~45~~0.5~4000~3000~0~yes",
+  "shape": [
+    "PAD~RECT~4000.0~3000~7.874~7.874~11~~1~4.3307~~0~ggeAGP01~0~~Y~0~~~4000.0,3000",
+    "PAD~ELLIPSE~4010.0~3000~7.874~7.874~11~~2~4.3307~~0~ggeAGP02~0~~Y~0~~~4010.0,3000",
+    "PAD~ELLIPSE~4020.0~3000~7.874~7.874~11~~3~4.3307~~0~ggeAGP03~0~~Y~0~~~4020.0,3000",
+    "PAD~ELLIPSE~4030.0~3000~7.874~7.874~11~~4~4.3307~~0~ggeAGP04~0~~Y~0~~~4030.0,3000",
+    "PAD~ELLIPSE~4040.0~3000~7.874~7.874~11~~5~4.3307~~0~ggeAGP05~0~~Y~0~~~4040.0,3000",
+    "PAD~ELLIPSE~4050.0~3000~7.874~7.874~11~~6~4.3307~~0~ggeAGP06~0~~Y~0~~~4050.0,3000",
+    "PAD~ELLIPSE~4060.0~3000~7.874~7.874~11~~7~4.3307~~0~ggeAGP07~0~~Y~0~~~4060.0,3000",
+    "PAD~ELLIPSE~4110.0~3000~7.874~7.874~11~~8~4.3307~~0~ggeAGP08~0~~Y~0~~~4110.0,3000",
+    "PAD~ELLIPSE~4120.0~3000~7.874~7.874~11~~9~4.3307~~0~ggeAGP09~0~~Y~0~~~4120.0,3000",
+    "PAD~ELLIPSE~4130.0~3000~7.874~7.874~11~~10~4.3307~~0~ggeAGP10~0~~Y~0~~~4130.0,3000",
+    "PAD~ELLIPSE~4140.0~3000~7.874~7.874~11~~11~4.3307~~0~ggeAGP11~0~~Y~0~~~4140.0,3000",
+    "PAD~ELLIPSE~4150.0~3000~7.874~7.874~11~~12~4.3307~~0~ggeAGP12~0~~Y~0~~~4150.0,3000",
+    "PAD~ELLIPSE~4160.0~3000~7.874~7.874~11~~13~4.3307~~0~ggeAGP13~0~~Y~0~~~4160.0,3000",
+    "PAD~ELLIPSE~4170.0~3000~7.874~7.874~11~~14~4.3307~~0~ggeAGP14~0~~Y~0~~~4170.0,3000",
+    "TRACK~0.8~3~~3964.9213 2987.2047 4205.0787 2987.2047~ggeAGS1~0",
+    "TRACK~0.8~3~~4205.0787 2987.2047 4205.0787 3012.7953~ggeAGS2~0",
+    "TRACK~0.8~3~~4205.0787 3012.7953 3964.9213 3012.7953~ggeAGS3~0",
+    "TRACK~0.8~3~~3964.9213 3012.7953 3964.9213 2987.2047~ggeAGS4~0",
+    "TRACK~0.8~3~~3978.3465 2990.5512 3982.3465 2990.5512 3980.3465 2994.5512 3978.3465 2990.5512~ggeAGM1~0",
+    "TEXT~P~4085.0~2980.315~0.8~0~0~3~~5~U?~~~ggeAGTXT1~~0~",
+    "TEXT~N~4085.0~3019.685~0.8~0~0~3~~5~AG1171~~~ggeAGTXT2~~0~"
+  ],
+  "layers": [
+    "1~TopLayer~#FF0000~true~true~true~",
+    "2~BottomLayer~#0000FF~true~false~true~",
+    "3~TopSilkLayer~#FFCC00~true~false~true~",
+    "4~BottomSilkLayer~#66CC33~true~false~true~",
+    "5~TopPasteMaskLayer~#808080~true~false~true~",
+    "6~BottomPasteMaskLayer~#800000~true~false~true~",
+    "7~TopSolderMaskLayer~#800080~true~false~true~0.3",
+    "8~BottomSolderMaskLayer~#AA00FF~true~false~true~0.3",
+    "10~BoardOutLine~#FF00FF~true~false~true~",
+    "11~Multi-Layer~#C0C0C0~true~false~true~"
+  ],
+  "objects": [
+    "All~true~false",
+    "Component~true~true",
+    "Prefix~true~true",
+    "Name~true~false",
+    "Track~true~true",
+    "Pad~true~true",
+    "Via~true~true",
+    "Hole~true~true",
+    "Copper_Area~true~true",
+    "Circle~true~true",
+    "Arc~true~true",
+    "Solid_Region~true~true",
+    "Text~true~true",
+    "Rect~true~true",
+    "Dimension~true~true"
+  ],
+  "BBox": {
+    "x": 3954.9213,
+    "y": 2972.2047,
+    "width": 260.15740000000005,
+    "height": 55.59060000000045
+  },
+  "preference": {
+    "hideFootprints": "",
+    "hideNets": ""
+  },
+  "DRCRULE": {
+    "Default": {
+      "trackWidth": 1,
+      "clearance": 0.6,
+      "viaHoleDiameter": 2.4,
+      "viaHoleD": 1.2
+    },
+    "isRealtime": false,
+    "isDrcOnRoutingOrPlaceVia": false,
+    "checkObjectToCopperarea": true,
+    "showDRCRangeLine": true
+  },
+  "netColors": {}
+}

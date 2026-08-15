@@ -1,0 +1,25 @@
+# Arduino build output
+build/
+**/build/
+*.elf
+*.map
+*.merged.bin
+*.bootloader.bin
+*.partitions.bin
+boot_app0.bin
+flash_args
+build.options.json
+sdkconfig
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.bak
+*.tmp
+*~
+
+# Logs
+*.log
+

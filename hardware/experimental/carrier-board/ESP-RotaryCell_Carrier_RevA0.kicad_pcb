@@ -1,0 +1,213 @@
+(kicad_pcb (version 20240108) (generator pcbnew)
+  (general (thickness 1.6))
+  (paper "A4")
+  (layers
+    (0 "F.Cu" signal)
+    (31 "B.Cu" signal)
+    (36 "B.SilkS" user "b.silkscreen")
+    (37 "F.SilkS" user "f.silkscreen")
+    (44 "Edge.Cuts" user)
+    (46 "B.CrtYd" user "b.courtyard")
+    (47 "F.CrtYd" user "f.courtyard")
+    (48 "B.Fab" user)
+    (49 "F.Fab" user)
+  )
+  (setup
+    (pad_to_mask_clearance 0)
+    (allow_soldermask_bridges_in_footprints no)
+  )
+
+  (gr_rect (start 20 20) (end 85 48)
+    (stroke (width 0.05) (type default)) (fill none) (layer "Edge.Cuts"))
+
+  (gr_text "ESP-RotaryCell Carrier Rev A0 - PROVISIONAL 65x28 mm"
+    (at 52.5 21.5) (layer "F.SilkS")
+    (effects (font (size 1.0 1.0) (thickness 0.15))))
+
+  (gr_text "PHONE / TIP-RING" (at 23 34 90) (layer "F.SilkS")
+    (effects (font (size 0.9 0.9) (thickness 0.13))))
+  (gr_text "LILYGO / FRONT" (at 82 34 90) (layer "F.SilkS")
+    (effects (font (size 0.9 0.9) (thickness 0.13))))
+
+  ; --- AG1171 custom mechanical footprint: single row, 14 pins in 2 groups of 7 ---
+  (footprint "ESP-RotaryCell:AG1171_VERTICAL"
+    (layer "F.Cu") (at 30 30)
+    (property "Reference" "U1" (at 21.59 -2.5 0) (layer "F.SilkS")
+      (effects (font (size 1 1) (thickness 0.15))))
+    (property "Value" "AG1171" (at 21.59 2.6 0) (layer "F.Fab")
+      (effects (font (size 1 1) (thickness 0.15))))
+    (fp_line (start -8.9 -1.5) (end 52.1 -1.5) (stroke (width 0.15) (type default)) (layer "F.SilkS"))
+    (fp_line (start 52.1 -1.5) (end 52.1 10.5) (stroke (width 0.15) (type default)) (layer "F.SilkS"))
+    (fp_line (start 52.1 10.5) (end -8.9 10.5) (stroke (width 0.15) (type default)) (layer "F.SilkS"))
+    (fp_line (start -8.9 10.5) (end -8.9 -1.5) (stroke (width 0.15) (type default)) (layer "F.SilkS"))
+    (fp_text user "AG1171 BODY / VERTICAL" (at 21.6 7.8) (layer "F.SilkS")
+      (effects (font (size 0.8 0.8) (thickness 0.12))))
+    (pad "1" thru_hole rect (at 0 0) (size 1.9 1.9) (drill 1.1) (layers "*.Cu" "*.Mask"))
+    (pad "2" thru_hole circle (at 2.54 0) (size 1.9 1.9) (drill 1.1) (layers "*.Cu" "*.Mask"))
+    (pad "3" thru_hole circle (at 5.08 0) (size 1.9 1.9) (drill 1.1) (layers "*.Cu" "*.Mask"))
+    (pad "4" thru_hole circle (at 7.62 0) (size 1.9 1.9) (drill 1.1) (layers "*.Cu" "*.Mask"))
+    (pad "5" thru_hole circle (at 10.16 0) (size 1.9 1.9) (drill 1.1) (layers "*.Cu" "*.Mask"))
+    (pad "6" thru_hole circle (at 12.70 0) (size 1.9 1.9) (drill 1.1) (layers "*.Cu" "*.Mask"))
+    (pad "7" thru_hole circle (at 15.24 0) (size 1.9 1.9) (drill 1.1) (layers "*.Cu" "*.Mask"))
+    (pad "8" thru_hole circle (at 27.94 0) (size 1.9 1.9) (drill 1.1) (layers "*.Cu" "*.Mask"))
+    (pad "9" thru_hole circle (at 30.48 0) (size 1.9 1.9) (drill 1.1) (layers "*.Cu" "*.Mask"))
+    (pad "10" thru_hole circle (at 33.02 0) (size 1.9 1.9) (drill 1.1) (layers "*.Cu" "*.Mask"))
+    (pad "11" thru_hole circle (at 35.56 0) (size 1.9 1.9) (drill 1.1) (layers "*.Cu" "*.Mask"))
+    (pad "12" thru_hole circle (at 38.10 0) (size 1.9 1.9) (drill 1.1) (layers "*.Cu" "*.Mask"))
+    (pad "13" thru_hole circle (at 40.64 0) (size 1.9 1.9) (drill 1.1) (layers "*.Cu" "*.Mask"))
+    (pad "14" thru_hole circle (at 43.18 0) (size 1.9 1.9) (drill 1.1) (layers "*.Cu" "*.Mask"))
+  )
+
+  ; TIP/RING connector
+  (footprint "Connector_Generic:Conn_01x02"
+    (layer "F.Cu") (at 23.5 26.5 90)
+    (property "Reference" "J1" (at 1.27 -2 90) (layer "F.SilkS")
+      (effects (font (size 0.9 0.9) (thickness 0.13))))
+    (property "Value" "TIP_RING" (at 1.27 2 90) (layer "F.Fab")
+      (effects (font (size 0.9 0.9) (thickness 0.13))))
+    (fp_rect (start -1 -1) (end 3.54 1) (stroke (width 0.15) (type default)) (fill none) (layer "F.SilkS"))
+    (pad "1" thru_hole rect (at 0 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+    (pad "2" thru_hole circle (at 2.54 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+  )
+
+  ; LilyGO carrier harness placeholder 1x14
+  (footprint "Connector_Generic:Conn_01x14"
+    (layer "F.Cu") (at 81.5 24.5 90)
+    (property "Reference" "J2" (at 16.5 -2 90) (layer "F.SilkS")
+      (effects (font (size 0.9 0.9) (thickness 0.13))))
+    (property "Value" "LILYGO_HARNESS_14P" (at 16.5 2 90) (layer "F.Fab")
+      (effects (font (size 0.8 0.8) (thickness 0.12))))
+    (fp_rect (start -1 -1) (end 34.5 1) (stroke (width 0.15) (type default)) (fill none) (layer "F.SilkS"))
+    (pad "1" thru_hole rect (at 0 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+    (pad "2" thru_hole circle (at 2.54 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+    (pad "3" thru_hole circle (at 5.08 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+    (pad "4" thru_hole circle (at 7.62 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+    (pad "5" thru_hole circle (at 10.16 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+    (pad "6" thru_hole circle (at 12.70 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+    (pad "7" thru_hole circle (at 15.24 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+    (pad "8" thru_hole circle (at 17.78 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+    (pad "9" thru_hole circle (at 20.32 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+    (pad "10" thru_hole circle (at 22.86 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+    (pad "11" thru_hole circle (at 25.40 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+    (pad "12" thru_hole circle (at 27.94 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+    (pad "13" thru_hole circle (at 30.48 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+    (pad "14" thru_hole circle (at 33.02 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+  )
+
+  ; INA226 placeholder
+  (footprint "Package_SO:VSSOP-10_3x3mm_P0.5mm"
+    (layer "F.Cu") (at 69 42)
+    (property "Reference" "U2" (at 0 -2.5) (layer "F.SilkS")
+      (effects (font (size 0.9 0.9) (thickness 0.13))))
+    (property "Value" "INA226" (at 0 2.5) (layer "F.Fab")
+      (effects (font (size 0.9 0.9) (thickness 0.13))))
+    (fp_rect (start -2 -1.8) (end 2 1.8) (stroke (width 0.15) (type default)) (fill none) (layer "F.SilkS"))
+    (pad "1" smd roundrect (at -1.75 -1.0) (size 1.2 0.35) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2))
+    (pad "2" smd roundrect (at -1.75 -0.5) (size 1.2 0.35) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2))
+    (pad "3" smd roundrect (at -1.75 0) (size 1.2 0.35) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2))
+    (pad "4" smd roundrect (at -1.75 0.5) (size 1.2 0.35) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2))
+    (pad "5" smd roundrect (at -1.75 1.0) (size 1.2 0.35) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2))
+    (pad "6" smd roundrect (at 1.75 1.0) (size 1.2 0.35) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2))
+    (pad "7" smd roundrect (at 1.75 0.5) (size 1.2 0.35) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2))
+    (pad "8" smd roundrect (at 1.75 0) (size 1.2 0.35) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2))
+    (pad "9" smd roundrect (at 1.75 -0.5) (size 1.2 0.35) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2))
+    (pad "10" smd roundrect (at 1.75 -1.0) (size 1.2 0.35) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2))
+  )
+
+  ; 10 mOhm shunt placeholder, 2512
+  (footprint "Resistor_SMD:R_2512_6332Metric"
+    (layer "F.Cu") (at 76 42)
+    (property "Reference" "RSH1" (at 0 -2.2) (layer "F.SilkS")
+      (effects (font (size 0.9 0.9) (thickness 0.13))))
+    (property "Value" "0.01R 1%" (at 0 2.2) (layer "F.Fab")
+      (effects (font (size 0.9 0.9) (thickness 0.13))))
+    (fp_rect (start -3.5 -1.8) (end 3.5 1.8) (stroke (width 0.15) (type default)) (fill none) (layer "F.SilkS"))
+    (pad "1" smd roundrect (at -2.8 0) (size 2.2 3.0) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.15))
+    (pad "2" smd roundrect (at 2.8 0) (size 2.2 3.0) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.15))
+  )
+
+  ; 470uF AG1171 bulk cap placeholder
+  (footprint "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm"
+    (layer "F.Cu") (at 67.5 34.5)
+    (property "Reference" "C1" (at 1.75 -4.5) (layer "F.SilkS")
+      (effects (font (size 0.9 0.9) (thickness 0.13))))
+    (property "Value" "470uF 16V" (at 1.75 4.5) (layer "F.Fab")
+      (effects (font (size 0.8 0.8) (thickness 0.12))))
+    (fp_circle (center 1.75 0) (end 5.75 0) (stroke (width 0.15) (type default)) (fill none) (layer "F.SilkS"))
+    (pad "1" thru_hole rect (at 0 0) (size 2.0 2.0) (drill 0.9) (layers "*.Cu" "*.Mask"))
+    (pad "2" thru_hole circle (at 3.5 0) (size 2.0 2.0) (drill 0.9) (layers "*.Cu" "*.Mask"))
+  )
+
+  ; AG1171 local bypass
+  (footprint "Capacitor_SMD:C_0603_1608Metric"
+    (layer "F.Cu") (at 72 34.5)
+    (property "Reference" "C2" (at 0 -1.5) (layer "F.SilkS")
+      (effects (font (size 0.8 0.8) (thickness 0.12))))
+    (property "Value" "100nF" (at 0 1.5) (layer "F.Fab")
+      (effects (font (size 0.8 0.8) (thickness 0.12))))
+    (fp_rect (start -1 -0.6) (end 1 0.6) (stroke (width 0.12) (type default)) (fill none) (layer "F.SilkS"))
+    (pad "1" smd roundrect (at -0.8 0) (size 0.8 0.9) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2))
+    (pad "2" smd roundrect (at 0.8 0) (size 0.8 0.9) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2))
+  )
+
+  ; VR1 / VR2 trimmer placeholders
+  (footprint "Potentiometer_THT:Potentiometer_Bourns_3296W_Vertical"
+    (layer "F.Cu") (at 40 43)
+    (property "Reference" "RV1" (at 0 -3) (layer "F.SilkS")
+      (effects (font (size 0.9 0.9) (thickness 0.13))))
+    (property "Value" "10k RX LEVEL" (at 0 3) (layer "F.Fab")
+      (effects (font (size 0.8 0.8) (thickness 0.12))))
+    (fp_rect (start -4.8 -2.2) (end 4.8 2.2) (stroke (width 0.15) (type default)) (fill none) (layer "F.SilkS"))
+    (pad "1" thru_hole rect (at -2.54 0) (size 1.8 1.8) (drill 0.9) (layers "*.Cu" "*.Mask"))
+    (pad "2" thru_hole circle (at 0 0) (size 1.8 1.8) (drill 0.9) (layers "*.Cu" "*.Mask"))
+    (pad "3" thru_hole circle (at 2.54 0) (size 1.8 1.8) (drill 0.9) (layers "*.Cu" "*.Mask"))
+  )
+
+  (footprint "Potentiometer_THT:Potentiometer_Bourns_3296W_Vertical"
+    (layer "F.Cu") (at 52 43)
+    (property "Reference" "RV2" (at 0 -3) (layer "F.SilkS")
+      (effects (font (size 0.9 0.9) (thickness 0.13))))
+    (property "Value" "10k TX LEVEL" (at 0 3) (layer "F.Fab")
+      (effects (font (size 0.8 0.8) (thickness 0.12))))
+    (fp_rect (start -4.8 -2.2) (end 4.8 2.2) (stroke (width 0.15) (type default)) (fill none) (layer "F.SilkS"))
+    (pad "1" thru_hole rect (at -2.54 0) (size 1.8 1.8) (drill 0.9) (layers "*.Cu" "*.Mask"))
+    (pad "2" thru_hole circle (at 0 0) (size 1.8 1.8) (drill 0.9) (layers "*.Cu" "*.Mask"))
+    (pad "3" thru_hole circle (at 2.54 0) (size 1.8 1.8) (drill 0.9) (layers "*.Cu" "*.Mask"))
+  )
+
+  ; Reserved protected rear-charge connector
+  (footprint "Connector_Generic:Conn_01x02"
+    (layer "F.Cu") (at 23.5 44 90)
+    (property "Reference" "J3" (at 1.27 -2 90) (layer "F.SilkS")
+      (effects (font (size 0.9 0.9) (thickness 0.13))))
+    (property "Value" "CHARGE_5V_GND" (at 1.27 2 90) (layer "F.Fab")
+      (effects (font (size 0.8 0.8) (thickness 0.12))))
+    (fp_rect (start -1 -1) (end 3.54 1) (stroke (width 0.15) (type default)) (fill none) (layer "F.SilkS"))
+    (pad "1" thru_hole rect (at 0 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+    (pad "2" thru_hole circle (at 2.54 0 90) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask"))
+  )
+
+  ; Mounting-hole placeholders
+  (footprint "MountingHole:MountingHole_2.7mm_M2.5"
+    (layer "F.Cu") (at 22.5 22.5)
+    (property "Reference" "H1" (at 0 2.5) (layer "F.SilkS") hide
+      (effects (font (size 0.8 0.8) (thickness 0.12))))
+    (fp_circle (center 0 0) (end 1.8 0) (stroke (width 0.15) (type default)) (fill none) (layer "F.SilkS"))
+    (pad "" np_thru_hole circle (at 0 0) (size 2.7 2.7) (drill 2.7) (layers "*.Cu" "*.Mask"))
+  )
+  (footprint "MountingHole:MountingHole_2.7mm_M2.5"
+    (layer "F.Cu") (at 82.5 45.5)
+    (property "Reference" "H2" (at 0 -2.5) (layer "F.SilkS") hide
+      (effects (font (size 0.8 0.8) (thickness 0.12))))
+    (fp_circle (center 0 0) (end 1.8 0) (stroke (width 0.15) (type default)) (fill none) (layer "F.SilkS"))
+    (pad "" np_thru_hole circle (at 0 0) (size 2.7 2.7) (drill 2.7) (layers "*.Cu" "*.Mask"))
+  )
+
+  ; Zone labels only; no routing/netlist yet
+  (gr_text "HIGH-VOLTAGE / SLIC ZONE" (at 43 33) (layer "F.SilkS")
+    (effects (font (size 0.7 0.7) (thickness 0.11))))
+  (gr_text "AUDIO / CONTROL ZONE" (at 48 39.5) (layer "F.SilkS")
+    (effects (font (size 0.7 0.7) (thickness 0.11))))
+  (gr_text "INA / POWER ZONE" (at 72 46) (layer "F.SilkS")
+    (effects (font (size 0.7 0.7) (thickness 0.11))))
+)

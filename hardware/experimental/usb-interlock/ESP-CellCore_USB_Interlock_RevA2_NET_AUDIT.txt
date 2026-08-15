@@ -1,0 +1,44 @@
+ESP-CellCore USB Interlock Rev A2 — intended net audit
+
+K1 DATA RELAY
+J1.2 D-_IN -> K1 pin 2 COM
+K1 pin 3 NO -> J2.2 D-_OUT
+J1.3 D+_IN -> K1 pin 4 COM
+K1 pin 6 NO -> J2.3 D+_OUT
+K1 pins 5,7 NC
+
+K2 POWER RELAY
+J1.1 VBUS_IN -> K2 pin 2 COM
+K2 pin 3 NO -> J2.1 VBUS_OUT
+J1.4 GND_IN -> K2 pin 4 COM
+K2 pin 6 NO -> J2.4 GND_OUT
+K2 pins 5,7 NC
+
+COILS
+K1.1,K2.1 = COIL+
+K1.8,K2.8 = GND_IN
+
+CONTROL
+VBUS_IN -> D0 anode; D0 cathode = VCTRL
+VCTRL -> R1A -> R1B -> EN
+EN -> C1 -> GND
+EN -> Q1 base
+Q1 emitter -> Q4 base
+Q1 collector + Q4 collector = DARL_C
+Q4 emitter -> GND
+DARL_C -> R2 -> Q3 base
+Q3 emitter = VCTRL
+Q3 collector = COIL+
+R3 from VCTRL to Q3 base
+
+OVP
+VCTRL -> R4A -> R4B -> D1 cathode
+D1 anode = OVP_BASE
+R5 OVP_BASE -> GND
+Q2 base = OVP_BASE
+Q2 emitter = GND
+Q2 collector = EN
+
+FLYBACK
+D2,D3 cathodes = COIL+
+D2,D3 anodes = GND
