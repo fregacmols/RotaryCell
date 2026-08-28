@@ -41,7 +41,7 @@ The telephone's RJ11 line jack is used only for regulated 5 V charging on the de
 | `docs` | Architecture, bring-up, and historical documentation |
 | `site` | Draft project-page copy for evilroot.net |
 
-Start with [STATUS.md](STATUS.md), [BUILDING.md](BUILDING.md), and [hardware/README.md](hardware/README.md).
+Start with [STATUS.md](STATUS.md), [current hardware wiring](docs/HARDWARE_WIRING.md), the [master BOM](docs/MASTER_BOM.md), the [assembly guide](docs/ASSEMBLY_GUIDE.md), and [BUILDING.md](BUILDING.md).
 
 ## Current functions
 
