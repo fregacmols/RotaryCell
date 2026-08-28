@@ -15,7 +15,7 @@ The application-only binary in `firmware/prebuilt` is intended for the firmware'
 1. Use a protected cell or current-limited bench supply with correct polarity.
 2. Keep the telephone line pair, AG1171 `PD` lead, and A4 reset harness disconnected.
 3. Confirm stable LilyGO operation and sensible battery-voltage reporting.
-4. Confirm regulated AG1171 power at carrier CN1 before installing or energizing the module.
+4. Confirm carrier CN1 receives the protected 21700 voltage directly with correct polarity before installing or energizing the AG1171. Never apply the regulated 5 V charging input to CN1.
 5. Check for abnormal heating or current draw before proceeding.
 
 ## 3. Verify controls without placing a call

@@ -30,9 +30,9 @@ RotaryCell is an internal, reversible interface. The original telephone remains 
 
 ### Battery and charging
 
-- A single protected 21700 cell connects directly to the LilyGO battery pads through a harness.
+- A single protected 21700 cell connects directly to the LilyGO battery pads through a harness and directly supplies the AG1171 carrier at CN1.
 - The LilyGO's original 18650 holder is removed.
-- The telephone's RJ11 jack is used only to deliver regulated 5 V charging power on the designated pins.
+- The telephone's RJ11 jack is used only to deliver regulated 5 V to the LilyGO charging input on the designated pins; it is separate from the AG1171 VPWR path.
 
 ## Firmware GPIO baseline
 

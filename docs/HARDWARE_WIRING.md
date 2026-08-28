@@ -11,9 +11,10 @@ flowchart LR
     L[LilyGO T-A7670G-S3] -->|GPIO36, GND, SPEK+, MIC+| A[Audio and Reset A4]
     A -->|VIN, GND, VOUT| C[AG1171 carrier]
     L -->|GPIO15 FR, GPIO16 RM, GPIO37 SHK, PD control TBD| C
-    P[Regulated AG1171 supply] -->|VPWR, GND| C
     C -->|Tip and Ring| N[Telephone network block]
-    B[Protected 21700 cell] --> L
+    B[Protected 21700 cell] -->|Battery pads| L
+    B -->|Direct cell voltage: VPWR and GND| C
+    CH[Regulated 5 V charging input via RJ11] -->|Charging input only| L
     A -.->|RAW_BAT, SW_BAT, reset trigger| L
 ```
 
@@ -73,9 +74,9 @@ The image above covers the audio portion only. The reset circuit is present in t
 | CN1 pin | Signal | Connection |
 | ---: | --- | --- |
 | 1 | `GND PWR` | Supply ground / common ground |
-| 2 | `VPWR` | Regulated AG1171 supply |
+| 2 | `VPWR` | Protected 21700 cell positive, direct |
 
-The present design expects regulated 5 V for the AG1171 supply. Confirm voltage and polarity at the empty socket before installing the AG1171.
+Carrier CN1 is fed directly from the protected 21700, in parallel with the LilyGO battery connection. CN1 pin 1 returns to cell negative/common ground. Do **not** apply the regulated 5 V charging input to CN1. Confirm cell voltage and polarity at the empty AG1171 socket before installing the module.
 
 ### U2 - audio, 3-pin JST-XH
 

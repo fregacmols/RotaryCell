@@ -56,14 +56,14 @@ Make one four-conductor cable:
 ## 5. Initial powered assembly
 
 1. Leave the AG1171 `PD` lead and the A4 reset harness disconnected.
-2. Apply regulated, current-limited power to carrier CN1: pin 1 GND, pin 2 VPWR.
-3. Verify voltage and polarity at AG1171 pins 12 and 13.
+2. Use the protected 21700 or a current-limited bench supply set to an appropriate single-cell Li-ion voltage. Connect carrier CN1 pin 1 to cell negative/common ground and pin 2 directly to cell positive/VPWR. Never apply the regulated 5 V charging input to CN1.
+3. Verify cell voltage and polarity at AG1171 pins 12 and 13.
 4. Connect the LilyGO/audio and audio/carrier harnesses.
 5. Power the LilyGO and perform the staged tests in [COMMISSIONING.md](COMMISSIONING.md).
 
 ## 6. Telephone and charging connections - documentation required
 
-Carrier CN2 provides Ring(B) on pin 1 and Tip(A) on pin 2, but this guide does not yet identify the exact Model 500 network-block screw terminals. Likewise, it does not establish the RJ11 charging pins. Do not infer either connection from wire color or jack position.
+Carrier CN2 provides Ring(B) on pin 1 and Tip(A) on pin 2, but this guide does not yet identify the exact Model 500 network-block screw terminals. Likewise, it does not establish the RJ11 pins that deliver regulated 5 V to the LilyGO charging input. Do not infer either connection from wire color or jack position.
 
 Before publication as a reproducible build, add:
 

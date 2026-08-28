@@ -13,10 +13,10 @@ This BOM combines the major system items with the two ordered board assemblies. 
 | 1 | Cellular antenna | Compatible antenna and feed for the LilyGO modem | Normally supplied with board |
 | 1 | SIM and service | Voice-capable SIM/service compatible with the modem and local network | Installation-specific |
 | 1 | Subscriber-line interface | Silvertel AG1171-S | Carrier-mounted |
-| 1 | Cell | Protected single 21700 Li-ion cell; Samsung 58E used in the prototype | Provide safe insulation/restraint |
+| 1 | Cell | Protected single 21700 Li-ion cell; Samsung 58E used in the prototype | Directly feeds LilyGO battery pads and carrier CN1 |
 | 1 | Audio/reset PCB | Audio and Reset A4 | Ordered; awaiting validation |
 | 1 | Carrier PCB | AG1171 Carrier Through-Hole | Ordered; awaiting validation |
-| 1 | Regulated supply path | Regulated 5 V charging/AG1171 power arrangement as finally wired | Physical wiring not yet documented |
+| 1 | Charging source | Regulated 5 V input through the RJ11 to the LilyGO charging input | Does not directly power carrier CN1 |
 
 ## Audio and Reset A4 assembly
 
@@ -72,6 +72,8 @@ Summary:
 | As required | Nonconductive mounting hardware or printed carrier | Mechanical installation; design pending |
 
 Housing counts assume the PCB headers listed above and a straight-through J2-to-U2 audio cable. Verify actual pre-crimped harness availability and pin order before purchase.
+
+The protected 21700 positive lead branches to both the LilyGO battery pads and carrier CN1 pin 2. Cell negative/common ground connects to the LilyGO and carrier CN1 pin 1. The regulated 5 V RJ11 input is a separate charging path into the LilyGO.
 
 The external 1 uF `MIC-` reference capacitor corresponds to C6 in the RevA2 prototype audio drawing. Do not confuse it with C6 on the A4 PCB BOM, which is a 4.7 uF reset-timing capacitor.
 

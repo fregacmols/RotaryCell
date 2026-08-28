@@ -22,9 +22,9 @@ See [STATUS.md](STATUS.md) for the distinction between tested prototype behavior
 - A LilyGO T-A7670G-S3 Standard board supplies the ESP32-S3 controller, A7670 cellular modem, battery charging, and cellular audio interface.
 - A Silvertel AG1171 subscriber-line interface operates the telephone line circuitry, senses the switch-hook, and drives the mechanical ringer.
 - The Audio and Reset A4 PCB provides adjustable transmit/receive audio conditioning and a hardware power-cycle circuit for recovery when software-only modem reset is insufficient.
-- A single 21700 cell connects to the LilyGO battery pads through a harness in place of the original 18650 holder.
+- A single protected 21700 cell connects to the LilyGO battery pads through a harness in place of the original 18650 holder and directly supplies the AG1171 carrier VPWR input.
 
-The telephone's RJ11 line jack is used only for regulated 5 V charging on the designated pins. It is not used as a telephone-line interface.
+The telephone's RJ11 line jack is used only to deliver regulated 5 V to the LilyGO charging input on the designated pins. It does not power the AG1171 directly and is not used as a telephone-line interface.
 
 ## Repository layout
 
