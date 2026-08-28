@@ -28,7 +28,12 @@ flowchart LR
 | 3 | Receive audio input | LilyGO `SPEK+` |
 | 4 | Transmit audio output | LilyGO `MIC+` |
 
-The ordered board uses one signal conductor in each audio direction. The screenshot does not establish the final LilyGO-side treatment of `SPEK-` and `MIC-`; record that connection from the working harness before calling this a complete external wiring specification. Do not assume an audio-negative terminal may be directly grounded merely because J1 includes common ground.
+The ordered board uses one signal conductor in each audio direction. The working prototype follows the RevA2 audio reference for the two LilyGO negative audio terminals:
+
+- Leave `SPEK-` unconnected and floating. Never connect `SPEK-` to ground; the LilyGO speaker output is bridge-tied.
+- Connect `MIC-` to common ground only through a 1 uF film or bipolar capacitor. This AC reference is located at the LilyGO/harness rather than on the A4 audio PCB.
+
+The 1 uF `MIC-` reference capacitor was called C6 in the RevA2 drawing. It is not the A4 board's C6; A4 C6 is the 4.7 uF reset-timing capacitor.
 
 ### J2 - AG1171_AUDIO, 3-pin JST-XH
 
@@ -55,6 +60,7 @@ The reset circuit shares ground through J1 pin 2. Firmware v0.10.4 does not assi
 - Receive: `SPEK+` -> C1 1 uF -> R1 10 kOhm -> SPK_LVL 10 kOhm -> C2 10 nF -> AG1171 `VIN`.
 - Tone injection: GPIO36 -> R2 3.3 kOhm with C3 22 nF to ground -> C4 220 nF -> R3 1 kOhm -> receive summing node.
 - Transmit: AG1171 `VOUT` -> C5 100 nF -> MIC_LVL 10 kOhm -> R4 10 kOhm -> `MIC+`.
+- LilyGO audio references: `SPEK-` remains floating; `MIC-` connects to common ground through an external 1 uF film/bipolar capacitor.
 
 ![Audio portion of the Audio and Reset A4 schematic](images/audio-a4-audio-schematic.png)
 
@@ -120,10 +126,9 @@ The exact Model 500 network-block screw terminals are not established by these s
 
 ## Connections still requiring physical documentation
 
-1. LilyGO-side `SPEK-` and `MIC-` treatment at the audio connectors.
-2. Exact solder pads on the LilyGO physical power switch for `RAW_BAT` and `SW_BAT`.
-3. Exact telephone network-block terminals for CN2 Tip and Ring.
-4. RJ11 charging pin numbers, polarity, fuse/protection, and regulated 5 V source.
-5. Final reset-trigger and AG1171-PD GPIO assignments.
+1. Exact solder pads on the LilyGO physical power switch for `RAW_BAT` and `SW_BAT`.
+2. Exact telephone network-block terminals for CN2 Tip and Ring.
+3. RJ11 charging pin numbers, polarity, fuse/protection, and regulated 5 V source.
+4. Final reset-trigger and AG1171-PD GPIO assignments.
 
-Until these five items are recorded, this is a PCB interconnect specification rather than a complete telephone wiring diagram.
+Until these four items are recorded, this is a PCB interconnect specification rather than a complete telephone wiring diagram.

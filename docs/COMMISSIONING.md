@@ -38,9 +38,10 @@ Change the password when the telephone will operate around people who should not
 ## 5. Set audio levels
 
 1. Begin with SPK_LVL and MIC_LVL near minimum signal level, verified with a meter rather than knob direction alone.
-2. Place a test call and raise receive level until the handset is clear without distortion.
-3. Raise transmit level until the remote caller hears clean audio without excessive noise, echo, or feedback.
-4. Recheck both directions with the housing placed in its normal position because wire and board placement can affect noise pickup.
+2. Confirm `SPEK-` is floating and insulated; confirm `MIC-` reaches common ground only through the external 1 uF film/bipolar capacitor.
+3. Place a test call and raise receive level until the handset is clear without distortion.
+4. Raise transmit level until the remote caller hears clean audio without excessive noise, echo, or feedback.
+5. Recheck both directions with the housing placed in its normal position because wire and board placement can affect noise pickup.
 
 ## 6. Functional tests
 

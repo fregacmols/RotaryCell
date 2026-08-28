@@ -37,7 +37,12 @@ Make one three-conductor straight-through JST-XH cable:
 
 ### LilyGO to audio board
 
-Make one four-conductor cable following J1 in [HARDWARE_WIRING.md](HARDWARE_WIRING.md). Before finalizing it, document how the installed prototype handles the LilyGO `SPEK-` and `MIC-` terminals; that detail is not proven by the supplied screenshots.
+Make one four-conductor cable following J1 in [HARDWARE_WIRING.md](HARDWARE_WIRING.md). At the LilyGO audio connectors:
+
+- Leave `SPEK-` unconnected and insulated. Do not ground it.
+- Connect `MIC-` to common ground through a 1 uF film or bipolar capacitor located at the LilyGO/harness.
+
+These connections follow the working prototype's RevA2 passive-audio reference. The four J1 conductors remain GPIO36, GND, `SPEK+`, and `MIC+`.
 
 ### LilyGO to carrier logic
 

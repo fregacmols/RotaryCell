@@ -66,11 +66,14 @@ Summary:
 | 2 | JST XHP-4 housing plus crimp contacts | LilyGO/audio harness and LilyGO/carrier logic harness |
 | 3 | JST XHP-3 housing plus crimp contacts | Both ends of audio-to-carrier cable plus reset harness |
 | 2 | JST XHP-2 housing plus crimp contacts | Carrier power and internal Tip/Ring harnesses |
+| 1 | 1 uF film or bipolar capacitor | AC-reference LilyGO `MIC-` to common ground at the LilyGO/harness |
 | As required | Stranded hookup wire, heat-shrink, sleeving, strain relief | Harness construction |
 | As required | Fuse/protection, insulated battery harness, connectors | Final battery and charging design |
 | As required | Nonconductive mounting hardware or printed carrier | Mechanical installation; design pending |
 
 Housing counts assume the PCB headers listed above and a straight-through J2-to-U2 audio cable. Verify actual pre-crimped harness availability and pin order before purchase.
+
+The external 1 uF `MIC-` reference capacitor corresponds to C6 in the RevA2 prototype audio drawing. Do not confuse it with C6 on the A4 PCB BOM, which is a 4.7 uF reset-timing capacitor.
 
 ## Not yet purchase-ready
 
