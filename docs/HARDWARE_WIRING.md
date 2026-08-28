@@ -1,5 +1,15 @@
 # Current hardware wiring and connector pinouts
 
+## Primary hand-wired prototype reference
+
+To reproduce the proven prototype from modules and discrete components, begin with the **[complete prototype wiring and component schematic](RotaryCell_Complete_Prototype_Wiring.pdf)**:
+
+[![RotaryCell complete prototype wiring and component schematic](images/complete-prototype-wiring.png)](RotaryCell_Complete_Prototype_Wiring.pdf)
+
+This master drawing follows the working RevA2 passive-audio implementation and deliberately omits the proposed automatic-reset circuit. It shows direct module-pin and component wiring rather than PCB connectors. The complete assembly can fit inside the original telephone without modifying it, but loose components and point-to-point wiring make placement, insulation, strain relief, and repeated dry-fitting important.
+
+The remainder of this page documents the newer Audio and Reset A4 and AG1171 carrier PCB interconnects.
+
 **Baseline:** Audio and Reset A4 plus AG1171 Carrier Through-Hole, as ordered August 2026
 
 This document translates the ordered EasyEDA schematics into cable-level connections. The native EasyEDA sources remain authoritative. Pin numbers below are electrical pin numbers; do not infer pin 1 from a left-to-right view of a loose mating housing. Confirm the pin-1 mark on the PCB and header before crimping a harness.

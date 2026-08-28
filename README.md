@@ -6,6 +6,14 @@ The design continues to use the original handset, rotary dial, switch-hook, mech
 
 This is a working engineering archive rather than a finished construction release. The hand-wired prototype operates, while the first integrated PCBs are currently awaiting assembly and validation.
 
+## Reproduce the working prototype by hand
+
+The complete point-to-point wiring and component reference is the primary starting point for recreating the proven hand-wired prototype:
+
+[![RotaryCell complete prototype wiring and component schematic](docs/images/complete-prototype-wiring.png)](docs/RotaryCell_Complete_Prototype_Wiring.pdf)
+
+**[Open or download the full-resolution printable PDF](docs/RotaryCell_Complete_Prototype_Wiring.pdf).** It covers the LilyGO, protected 21700, passive audio components, AG1171, GPIO connections, and original Model 500 circuitry without using the new PCBs. A hand-wired installation fits inside the telephone, but arranging and insulating all of the loose components and wiring is challenging; expect repeated dry-fitting and careful routing.
+
 ## Current baseline
 
 This repository records the project as it stood on **August 28, 2026**:
@@ -41,7 +49,7 @@ The telephone's RJ11 line jack is used only to deliver regulated 5 V to the Lily
 | `docs` | Architecture, bring-up, and historical documentation |
 | `site` | Draft project-page copy for evilroot.net |
 
-Start with [STATUS.md](STATUS.md), [current hardware wiring](docs/HARDWARE_WIRING.md), the [master BOM](docs/MASTER_BOM.md), the [assembly guide](docs/ASSEMBLY_GUIDE.md), and [BUILDING.md](BUILDING.md).
+For a hand-wired build, start with the [complete prototype wiring reference](docs/RotaryCell_Complete_Prototype_Wiring.pdf). For the newer PCB implementation, continue with [STATUS.md](STATUS.md), [current hardware wiring](docs/HARDWARE_WIRING.md), the [master BOM](docs/MASTER_BOM.md), the [assembly guide](docs/ASSEMBLY_GUIDE.md), and [BUILDING.md](BUILDING.md).
 
 ## Current functions
 

@@ -2,6 +2,7 @@
 
 Current project documentation:
 
+- [Complete prototype wiring schematic](RotaryCell_Complete_Prototype_Wiring.pdf) — primary reference for reproducing the working prototype by hand
 - [Current hardware wiring](HARDWARE_WIRING.md) — confirmed cable-level pinouts and remaining installation unknowns
 - [Master BOM](MASTER_BOM.md) — system, board, and harness parts for one telephone
 - [Assembly guide](ASSEMBLY_GUIDE.md) — staged construction without inventing undocumented telephone terminals
