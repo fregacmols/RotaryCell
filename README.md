@@ -75,7 +75,9 @@ Dial service code `0000` starts maintenance Wi-Fi. Service code `9999` performs 
 
 ## Repository policy
 
-For now, this repository is best kept private on GitHub. It is intended to provide a durable, reproducible engineering baseline without presenting the current board candidates as a finished public release.
+This is a public engineering and development archive. It is intended to preserve a durable, reproducible baseline, make the working hand-wired prototype available to other builders, and document progress toward a more integrated implementation.
+
+The repository should not be mistaken for a finished construction kit or production release. Files under `hardware/audio-reset-a4` and `hardware/ag1171-carrier-through-hole` record the exact board candidates ordered in August 2026; their assembled operation has not yet been validated. Tested behavior, known failures, and remaining documentation gaps are tracked in [STATUS.md](STATUS.md).
 
 ## License
 
