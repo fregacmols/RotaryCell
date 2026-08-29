@@ -1,8 +1,12 @@
 # RotaryCell
 
-RotaryCell converts a traditional rotary telephone into a self-contained cellular telephone **without modifying the original telephone**.
+RotaryCell converts a traditional rotary telephone into a self-contained, battery-powered, portable cellular telephone **without modifying the original telephone**.
 
 The design continues to use the original handset, rotary dial, switch-hook, mechanical ringer, network block, and existing jacks. The added electronics mount reversibly inside the case; no original telephone parts need to be drilled, cut, or permanently altered.
+
+The working prototype can be carried and operated away from a fixed telephone connection, making the original desk telephone usable at meetings, demonstrations, or anywhere compatible cellular service is available.
+
+![Working RotaryCell prototype: an original black Western Electric Model 500 rotary telephone](docs/images/rotarycell-prototype.jpg)
 
 This is a working engineering archive rather than a finished construction release. The hand-wired prototype operates, while the first integrated PCBs are currently awaiting assembly and validation.
 
