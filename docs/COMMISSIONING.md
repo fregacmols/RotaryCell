@@ -4,7 +4,7 @@ This procedure brings up a newly assembled RotaryCell in stages. It assumes firm
 
 ## 1. Install the firmware
 
-1. Follow [BUILDING.md](../BUILDING.md) for the known Arduino ESP32 core and board settings.
+1. Follow [FIRMWARE_BUILDING.md](../FIRMWARE_BUILDING.md) for the known Arduino ESP32 core and board settings.
 2. Upload v0.10.4 by USB for the initial installation.
 3. Confirm the USB console reaches the normal idle state without repeated resets.
 

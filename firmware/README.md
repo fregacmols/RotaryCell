@@ -16,7 +16,7 @@ The current firmware baseline is [`current/ESP-RotaryCell_v0.10.4`](current/ESP-
 
 The firmware uses WiFi, WebServer, LittleFS, Update, and other libraries supplied with the ESP32 Arduino core. No separate third-party Arduino library was required for the v0.10.4 build.
 
-Open `current/ESP-RotaryCell_v0.10.4/ESP-RotaryCell_v0.10.4.ino` in Arduino IDE, select the settings above, and compile or upload normally. The complete FQBN is recorded in the root [BUILDING.md](../BUILDING.md).
+Open `current/ESP-RotaryCell_v0.10.4/ESP-RotaryCell_v0.10.4.ino` in Arduino IDE, select the settings above, and compile or upload normally. The complete FQBN is recorded in the root [FIRMWARE_BUILDING.md](../FIRMWARE_BUILDING.md).
 
 ## Configuration and security
 

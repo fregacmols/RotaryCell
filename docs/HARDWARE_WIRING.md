@@ -20,10 +20,10 @@ This document translates the ordered EasyEDA schematics into cable-level connect
 flowchart LR
     L[LilyGO T-A7670G-S3] -->|GPIO36, GND, SPEK+, MIC+| A[Audio and Reset A4]
     A -->|VIN, GND, VOUT| C[AG1171 carrier]
-    L -->|GPIO15 FR, GPIO16 RM, GPIO37 SHK, PD control TBD| C
+    L -->|GPIO15 FR, GPIO16 RM, GPIO37 SHK, GPIO21 PD| C
     C -->|Tip and Ring| N[Telephone network block]
-    B[Protected 21700 cell] -->|Battery pads| L
-    B -->|Direct cell voltage: VPWR and GND| C
+    B[21700 cell] -->|BAT positive and BATN negative| L
+    L -->|VBAT and protected system GND| C
     CH[Regulated 5 V charging input via RJ11] -->|Charging input only| L
     A -.->|RAW_BAT, SW_BAT, reset trigger| L
 ```
@@ -62,7 +62,7 @@ This cable is straight-through: 1-to-1, 2-to-2, and 3-to-3.
 | ---: | --- | --- |
 | 1 | `SW_BAT` | Switched side of the LilyGO physical power-switch path |
 | 2 | `RAW_BAT` | Raw cell-positive side of that switch path |
-| 3 | Trigger | Future LilyGO reset-control GPIO |
+| 3 | Trigger | LilyGO GPIO35 |
 
 The reset circuit shares ground through J1 pin 2. Firmware v0.10.4 does not assign U2 pin 3. Keep this harness unplugged until the one-shot and switch nodes have been verified with a meter. The schematic identifies the electrical nodes, but the exact LilyGO switch solder points still require a close-up photograph or pad-level drawing.
 
@@ -83,10 +83,10 @@ The image above covers the audio portion only. The reset circuit is present in t
 
 | CN1 pin | Signal | Connection |
 | ---: | --- | --- |
-| 1 | `GND PWR` | Supply ground / common ground |
-| 2 | `VPWR` | Protected 21700 cell positive, direct |
+| 1 | `GND PWR` | LilyGO system GND |
+| 2 | `VPWR` | LilyGO header pad marked `VBAT` |
 
-Carrier CN1 is fed directly from the protected 21700, in parallel with the LilyGO battery connection. CN1 pin 1 returns to cell negative/common ground. Do **not** apply the regulated 5 V charging input to CN1. Confirm cell voltage and polarity at the empty AG1171 socket before installing the module.
+The LilyGO `VBAT` pad is on the cell-positive rail, but its exposed system GND is separated from the holder-negative `BATN` node by the onboard low-side battery protector. Connect carrier CN1 pin 1 to LilyGO system GND—not directly to holder negative or `BATN`—so the AG1171 load cannot bypass that protection. Do **not** apply the regulated 5 V charging input to CN1. Confirm voltage and polarity at the empty AG1171 socket before installing the module.
 
 ### U2 - audio, 3-pin JST-XH
 
@@ -103,9 +103,9 @@ Carrier CN1 is fed directly from the protected 21700, in parallel with the LilyG
 | 1 | `FR`, through R3 1 kOhm | GPIO15 |
 | 2 | `RM`, through R2 1 kOhm | GPIO16 |
 | 3 | `SHK`, through R1 1 kOhm | GPIO37 |
-| 4 | `PD`, through D2 1N4148 | Power-down control GPIO not assigned in v0.10.4 |
+| 4 | `PD`, through D2 BAT85 planned substitution | GPIO21; high-impedance normally and LOW for power-down; never drive HIGH |
 
-Do not connect U3 pin 4 to an arbitrary GPIO until its active level, boot behavior, and firmware assignment have been documented and tested.
+Firmware after v0.10.4 must implement GPIO21 as a low-or-high-impedance control. The AG1171 datasheet prohibits driving `PD` HIGH.
 
 ### CN2 - telephone line, 2-pin JST-XH
 
@@ -140,6 +140,6 @@ The exact Model 500 network-block screw terminals are not established by these s
 1. Exact solder pads on the LilyGO physical power switch for `RAW_BAT` and `SW_BAT`.
 2. Exact telephone network-block terminals for CN2 Tip and Ring.
 3. RJ11 charging pin numbers, polarity, fuse/protection, and regulated 5 V source.
-4. Final reset-trigger and AG1171-PD GPIO assignments.
+4. Bench validation of the GPIO35 reset trigger and GPIO21 AG1171-PD control.
 
 Until these four items are recorded, this is a PCB interconnect specification rather than a complete telephone wiring diagram.

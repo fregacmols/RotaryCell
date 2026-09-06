@@ -30,7 +30,8 @@ RotaryCell is an internal, reversible interface. The original telephone remains 
 
 ### Battery and charging
 
-- A single protected 21700 cell connects directly to the LilyGO battery pads through a harness and directly supplies the AG1171 carrier at CN1.
+- A single 21700 cell connects to the LilyGO `BAT` and `BATN` battery points through a harness.
+- The AG1171 carrier is supplied from the LilyGO `VBAT` header pad and LilyGO system GND. Its ground must not be connected directly to `BATN`, because `BATN` is the cell side of the LilyGO's low-side battery protector.
 - The LilyGO's original 18650 holder is removed.
 - The telephone's RJ11 jack is used only to deliver regulated 5 V to the LilyGO charging input on the designated pins; it is separate from the AG1171 VPWR path.
 
@@ -51,5 +52,7 @@ Firmware v0.10.4 defines:
 | Modem PWRKEY | 46 |
 | Modem power save | 42 |
 | Battery ADC | 8 |
+| Hardware reset trigger | 35 (assigned for next firmware; absent from v0.10.4) |
+| AG1171 PD | 21 (assigned for next firmware; high-impedance normally, LOW to power down) |
 
-The A4 reset-trigger GPIO is not assigned in v0.10.4.
+Firmware v0.10.4 does not yet implement GPIO35 or GPIO21; these assignments were selected during the first JLC build and require bench validation before release.
