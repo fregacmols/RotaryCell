@@ -1,0 +1,45 @@
+site_name: RotaryCell Build Guide
+site_description: Assembly, commissioning, and troubleshooting documentation for RotaryCell
+repo_url: https://github.com/fregacmols/RotaryCell
+repo_name: fregacmols/RotaryCell
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - content.action.edit
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Before You Build:
+      - Build Status: STATUS.md
+      - Parts & BOM: MASTER_BOM.md
+  - Assembly:
+      - Assembly Guide: ASSEMBLY_GUIDE.md
+      - Hardware Wiring: HARDWARE_WIRING.md
+      - First-board Bring-up: BRINGUP.md
+  - Commissioning:
+      - Commissioning & Testing: COMMISSIONING.md
+  - Firmware:
+      - Firmware Overview: firmware.md
+  - Troubleshooting: troubleshooting.md
+  - Reference:
+      - System Architecture: architecture.md
+
+copyright: RotaryCell — MIT licensed open-source project
