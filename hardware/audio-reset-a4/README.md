@@ -13,3 +13,13 @@ Submitted to JLCPCB on August 27, 2026. These files are an immutable record of t
 The design combines the passive, adjustable audio interface with a hardware power-cycle circuit intended to operate the LilyGO physical switch path. Firmware v0.10.4 does not yet assign or drive its reset-trigger GPIO.
 
 Do not edit the as-ordered files in place. Place subsequent revisions in a new directory.
+
+## Downloads
+
+Filenames were standardized on September 16, 2026. File contents are byte-for-byte identical to the original order exports. Internal EasyEDA project names may retain the historical name.
+
+- BOM — upload for assembly: [ESP-RotaryCell_Audio-Reset_RevA4_BOM.csv](ESP-RotaryCell_Audio-Reset_RevA4_BOM.csv)
+- Gerbers — upload for PCB fabrication: [ESP-RotaryCell_Audio-Reset_RevA4_Gerbers.zip](ESP-RotaryCell_Audio-Reset_RevA4_Gerbers.zip)
+- PCB source: [ESP-RotaryCell_Audio-Reset_RevA4_PCB.json](ESP-RotaryCell_Audio-Reset_RevA4_PCB.json)
+- Pick-and-place — upload for assembly: [ESP-RotaryCell_Audio-Reset_RevA4_PickAndPlace.csv](ESP-RotaryCell_Audio-Reset_RevA4_PickAndPlace.csv)
+- Schematic source: [ESP-RotaryCell_Audio-Reset_RevA4_Schematic.json](ESP-RotaryCell_Audio-Reset_RevA4_Schematic.json)

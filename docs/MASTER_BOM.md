@@ -20,7 +20,7 @@ This BOM combines the major system items with the two ordered board assemblies. 
 
 ## Audio and Reset A4 assembly
 
-The exact JLCPCB assembly list, including manufacturer and LCSC part numbers, is preserved as [`hardware/audio-reset-a4/BOM_ESP-CellCore-Passive-Audio-Board-Rev-A4-Reset-VALIDATED_2026-08-27.csv`](../hardware/audio-reset-a4/BOM_ESP-CellCore-Passive-Audio-Board-Rev-A4-Reset-VALIDATED_2026-08-27.csv).
+The exact JLCPCB assembly list, including manufacturer and LCSC part numbers, is preserved as [`hardware/audio-reset-a4/ESP-RotaryCell_Audio-Reset_RevA4_BOM.csv`](../hardware/audio-reset-a4/ESP-RotaryCell_Audio-Reset_RevA4_BOM.csv).
 
 Summary:
 

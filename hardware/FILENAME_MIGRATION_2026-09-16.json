@@ -1,0 +1,50 @@
+[
+  {
+    "directory": "audio-reset-a4",
+    "original": "BOM_ESP-CellCore-Passive-Audio-Board-Rev-A4-Reset-VALIDATED_2026-08-27.csv",
+    "current": "ESP-RotaryCell_Audio-Reset_RevA4_BOM.csv",
+    "sha256": "cb40e841e299f07c36bfddd0e8811f8e3804edc6797aef7e959c7b3710cbd4d0"
+  },
+  {
+    "directory": "audio-reset-a4",
+    "original": "Gerber_ESP-CellCore-Passive-Audio-Board-Rev-A_PCB_ESP-CellCore-Passive-Audio-Board-R_2026-08-27.zip",
+    "current": "ESP-RotaryCell_Audio-Reset_RevA4_Gerbers.zip",
+    "sha256": "ec101028b44c9d34c339a6d616ef89b590064ffc1c6b94e9cf877bb720a8f364"
+  },
+  {
+    "directory": "audio-reset-a4",
+    "original": "PCB_PCB_ESP-CellCore-Passive-Audio-Board-Rev-A4-Reset-VALIDATED_2026-08-27.json",
+    "current": "ESP-RotaryCell_Audio-Reset_RevA4_PCB.json",
+    "sha256": "0f250812180cf8fefcae803a5a4f1edda9233cfab7afbbc60079b5fcf52be5f0"
+  },
+  {
+    "directory": "audio-reset-a4",
+    "original": "PickAndPlace_PCB_ESP-CellCore-Passive-Audio-Board-Rev-A4-Reset-VALIDATED_2026-08-27.csv",
+    "current": "ESP-RotaryCell_Audio-Reset_RevA4_PickAndPlace.csv",
+    "sha256": "9e3eb3c5b22e3fd7954b7212fed501ca4a97375236286b64d256a3e6ba8ecdcc"
+  },
+  {
+    "directory": "audio-reset-a4",
+    "original": "SCH_ESP-CellCore-Passive-Audio-Board-Rev-A4-Reset-VALIDATED_2026-08-27.json",
+    "current": "ESP-RotaryCell_Audio-Reset_RevA4_Schematic.json",
+    "sha256": "0974e27cfd4a8f25b4291de438956ea564822e6c382fe5744fc6c0868ef30a5f"
+  },
+  {
+    "directory": "ag1171-carrier-through-hole",
+    "original": "Gerber_Carrier_PCB_TH_2026-08-28.zip",
+    "current": "ESP-RotaryCell_AG1171-Carrier_Through-Hole_2026-08-28_Gerbers.zip",
+    "sha256": "402a4953ca123ab2917c3052db2d93193d29cdcdd180cb3f1ba0731fd5aea770"
+  },
+  {
+    "directory": "ag1171-carrier-through-hole",
+    "original": "PCB_Carrier_PCB_TH_2026-08-28.json",
+    "current": "ESP-RotaryCell_AG1171-Carrier_Through-Hole_2026-08-28_PCB.json",
+    "sha256": "a0aaf2bbf4f91462987774bb603bd8133037149d8d43e0047ca2798d29c77e66"
+  },
+  {
+    "directory": "ag1171-carrier-through-hole",
+    "original": "SCH_Carrier-Board_2026-08-28.json",
+    "current": "ESP-RotaryCell_AG1171-Carrier_Through-Hole_2026-08-28_Schematic.json",
+    "sha256": "ee7b396d96420febac7b8c4148766d0d6e32edf134983e8c53634146a0249437"
+  }
+]
