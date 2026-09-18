@@ -2,6 +2,12 @@
 
 The current firmware baseline is [`current/ESP-RotaryCell_v0.10.4`](current/ESP-RotaryCell_v0.10.4/).
 
+The active PCB hardware-validation build is
+[`../development/firmware/ESP-RotaryCell_v0.11.1-dev`](../development/firmware/ESP-RotaryCell_v0.11.1-dev/).
+It is published so that the software running on current test phones is not ahead
+of the repository, but it remains a development build rather than the stable
+firmware release.
+
 ## Build environment used
 
 - Arduino ESP32 core: **3.3.11**
@@ -32,3 +38,8 @@ Change `WIFI_AP_PASSWORD` before deploying the phone where untrusted people coul
 Version 0.10.4 can attempt an AT-command/software modem recovery through service code `9999`, but it predates the Audio and Reset A4 hardware trigger. A later firmware revision must assign a suitable free GPIO, generate the required trigger pulse, and prevent an unintended reset during boot.
 
 Do not guess the reset connector pinout from this document; use the ordered A4 schematic as the authority.
+
+Version 0.11.1-dev implements the GPIO35 trigger, records paired pre/post-reset
+diagnostics, and has successfully power-cycled the assembled phone on battery.
+See [STATUS.md](../STATUS.md) and the development firmware notes for the current
+validation boundary.

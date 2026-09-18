@@ -27,3 +27,6 @@ Thumbs.db
 tmp/
 working/
 scratch/
+
+# Generated development source bundles (source directories are authoritative)
+development/firmware/*.zip

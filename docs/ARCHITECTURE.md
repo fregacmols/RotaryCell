@@ -12,7 +12,7 @@ RotaryCell is an internal, reversible interface. The original telephone remains 
 - Hosts the A7670 cellular modem
 - Provides cellular microphone and speaker audio connections
 - Charges and monitors the 21700 cell
-- Provides GPIO for AG1171 control, switch-hook sensing, dial-tone PWM, and the planned hardware-reset trigger
+- Provides GPIO for AG1171 control, switch-hook sensing, dial-tone PWM, and the hardware-reset trigger
 
 ### AG1171 carrier
 
@@ -35,9 +35,11 @@ RotaryCell is an internal, reversible interface. The original telephone remains 
 - The LilyGO's original 18650 holder is removed.
 - The telephone's RJ11 jack is used only to deliver regulated 5 V to the LilyGO charging input on the designated pins; it is separate from the AG1171 VPWR path.
 
-## Firmware GPIO baseline
+## Firmware GPIO assignments
 
-Firmware v0.10.4 defines:
+Stable firmware v0.10.4 defines the established telephone and modem signals.
+Development firmware v0.11.1-dev also uses the reset and AG1171 power-down
+assignments shown below.
 
 | Function | ESP32-S3 GPIO |
 | --- | ---: |
@@ -52,7 +54,9 @@ Firmware v0.10.4 defines:
 | Modem PWRKEY | 46 |
 | Modem power save | 42 |
 | Battery ADC | 8 |
-| Hardware reset trigger | 35 (assigned for next firmware; absent from v0.10.4) |
-| AG1171 PD | 21 (assigned for next firmware; high-impedance normally, LOW to power down) |
+| Hardware reset trigger | 35 (v0.11.1-dev) |
+| AG1171 PD | 21 (v0.11.1-dev; high-impedance normally, LOW to power down) |
 
-Firmware v0.10.4 does not yet implement GPIO35 or GPIO21; these assignments were selected during the first JLC build and require bench validation before release.
+The GPIO35 reset trigger and GPIO21 AG1171 power-down control have passed initial
+testing on assembled hardware. They remain in the development firmware while
+automatic modem-failure detection and longer endurance testing continue.

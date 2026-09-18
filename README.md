@@ -11,7 +11,7 @@ The working prototype can be carried and operated away from a fixed telephone co
 **[Watch the brief RotaryCell introduction and demonstration on YouTube](https://youtu.be/PO0PJNvnMdw).**
 
 > [!IMPORTANT]
-> **Build status — September 6, 2026:** The first JLCPCB Audio/Reset A4 and AG1171 carrier boards have been assembled, and the functions supported by firmware v0.10.4 passed initial testing on the new assembly. This is still an active engineering validation rather than a finished construction release: the assembly documentation is being rewritten from the actual build, and the new automatic-reset and AG1171 power-down controls are not yet implemented or validated in firmware. Check [STATUS.md](STATUS.md) before ordering boards or parts.
+> **Build status — September 18, 2026:** Firmware v0.10.4 remains the stable public baseline. The actively tested PCB build now runs **v0.11.1-dev**, which adds the A4 hardware-reset trigger, optional AG1171 idle power saving, optional INA226/microSD power logging, reset diagnostics, maintenance-log downloads, and improved maintenance Wi-Fi controls. These newer sources are published under [`development/firmware`](development/firmware/) while endurance testing and automatic modem-failure detection continue. Check [STATUS.md](STATUS.md) before ordering boards or parts.
 
 ## Reproduce the working prototype by hand
 
@@ -23,12 +23,14 @@ The complete point-to-point wiring and component reference is the primary starti
 
 ## Current baseline
 
-This repository records the current tested baseline as of **September 6, 2026**:
+This repository records the current tested baseline as of **September 18, 2026**:
 
-- Firmware **v0.10.4** is the current prototype-tested software.
+- Firmware **v0.10.4** remains the stable public baseline.
+- Firmware **v0.11.1-dev** is the active hardware-validation build and its source is included in the repository.
 - The **Audio and Reset A4** and **AG1171 Carrier Through-Hole** PCBs have been received and assembled.
-- Existing v0.10.4 telephone functions operate on the first PCB assembly.
-- Automatic hardware reset and AG1171 power-down remain untested because v0.10.4 does not yet control them.
+- Incoming and outgoing calls, rotary dialing, ringing, audio, manual hardware reset through service code `9999`, and AG1171 idle power saving have operated on assembled PCB builds.
+- The manual hardware reset recovered a field-observed state in which incoming calls went directly to voicemail. Automatic detection and recovery of that failure is still future work.
+- The optional INA226/microSD logger has recorded long-duration current data; its current measurements are useful, while its bus-voltage and calculated-power fields still require correction.
 - The manufacturing packages remain archived exactly as submitted; first-build details and measurements are still being documented.
 
 See [STATUS.md](STATUS.md) for the distinction between tested behavior and the validation work still in progress.
@@ -49,6 +51,7 @@ The telephone's RJ11 line jack is used only to deliver regulated 5 V to the Lily
 | `firmware/current` | Current Arduino sketch and source files |
 | `firmware/prebuilt` | Current application OTA binary and source ZIP |
 | `firmware/archive` | Historical firmware snapshots |
+| `development/firmware` | Active development and hardware-validation firmware |
 | `hardware/audio-reset-a4` | Exact Audio and Reset A4 source and manufacturing package |
 | `hardware/ag1171-carrier-through-hole` | Exact through-hole carrier source and Gerber package |
 | `hardware/prototype` | Material associated with the working hand-wired prototype |
@@ -71,7 +74,7 @@ For a hand-wired build, start with the [complete prototype wiring reference](doc
 - Browser/USB AT-command terminal and persistent event log
 - Cellular-network clock synchronization and application OTA updates
 
-Dial service code `0000` starts maintenance Wi-Fi. Service code `9999` performs modem diagnostics and software recovery, but it did not recover the field-observed modem lockup described in [STATUS.md](STATUS.md).
+Dial service code `0000` starts maintenance Wi-Fi. The USB console command `WIFI ON` provides access when the dial cannot be used. Service code `9999` records pre-reset diagnostics and triggers the A4 hardware power-cycle circuit; v0.11.1-dev successfully used that path to clear the field-observed modem failure described in [STATUS.md](STATUS.md).
 
 ## Important cautions
 
@@ -85,7 +88,7 @@ Dial service code `0000` starts maintenance Wi-Fi. Service code `9999` performs 
 
 This is a public engineering and development archive. It is intended to preserve a durable, reproducible baseline, make the working hand-wired prototype available to other builders, and document progress toward a more integrated implementation.
 
-The repository should not be mistaken for a finished construction kit or production release. Files under `hardware/audio-reset-a4` and `hardware/ag1171-carrier-through-hole` record the exact board candidates ordered in August 2026. Their first assembled operation has passed initial testing with the existing firmware, while the new reset and power-down features still require firmware support and validation. Tested behavior, known failures, and remaining documentation gaps are tracked in [STATUS.md](STATUS.md).
+The repository should not be mistaken for a finished construction kit or production release. Files under `hardware/audio-reset-a4` and `hardware/ag1171-carrier-through-hole` record the exact board candidates ordered in August 2026. Their first assembled operation and the v0.11.1-dev reset and power-saving controls have passed initial testing. Longer-term reliability, automatic modem-failure recovery, and construction documentation remain in progress. Tested behavior, known failures, and remaining documentation gaps are tracked in [STATUS.md](STATUS.md).
 
 ## License
 

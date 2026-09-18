@@ -40,6 +40,6 @@ nav:
       - Firmware Overview: firmware.md
   - Troubleshooting: troubleshooting.md
   - Reference:
-      - System Architecture: architecture.md
+      - System Architecture: ARCHITECTURE.md
 
 copyright: RotaryCell — MIT licensed open-source project
