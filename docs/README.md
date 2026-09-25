@@ -2,6 +2,7 @@
 
 Current project documentation:
 
+- [Project history and engineering references](PROJECT_HISTORY.md) — development context, prototype evolution, PCB baseline, and archive guide
 - [Complete prototype wiring schematic](RotaryCell_Complete_Prototype_Wiring.pdf) — primary reference for reproducing the working prototype by hand
 - [Current hardware wiring](HARDWARE_WIRING.md) — confirmed cable-level pinouts and remaining installation unknowns
 - [PCB connector pin guide](PCB_CONNECTOR_PIN_GUIDE.md) — installed JST orientation and LilyGO correlation tables for the A4 and AG1171 carrier boards
