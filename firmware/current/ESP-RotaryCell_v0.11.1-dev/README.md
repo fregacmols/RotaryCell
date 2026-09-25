@@ -1,8 +1,9 @@
 # RotaryCell v0.11.1-dev
 
-This is the active development firmware used to validate the assembled Audio
-and Reset A4 and AG1171 carrier boards. Stable release v0.10.4 remains under
-`firmware/current` while these additions complete endurance testing.
+This is the current supported firmware for the illustrated Audio/Reset A4 and
+AG1171 carrier-board build. It remains development-labelled while endurance
+testing and automatic modem-recovery work continue. Stable release v0.10.4 is
+retained under `firmware/archive` for older installations.
 
 ## Additions over v0.10.4
 

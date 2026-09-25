@@ -1,8 +1,8 @@
-# Development OTA binary
+# Current OTA binary
 
 `RotaryCell_v0.11.1-dev_OTA.bin` is the Arduino application binary built from
-`development/firmware/ESP-RotaryCell_v0.11.1-dev` for upload through the
-RotaryCell maintenance page.
+[`firmware/current/ESP-RotaryCell_v0.11.1-dev`](../current/ESP-RotaryCell_v0.11.1-dev/)
+for upload through the RotaryCell maintenance page.
 
 - Firmware label: `0.11.1-dev`
 - File size: 1,117,840 bytes
@@ -17,3 +17,7 @@ RotaryCell maintenance page.
 This binary has the optional INA226/microSD development power logger enabled.
 Phones without that hardware continue to operate, but the logger reports its
 initialization failure and disables itself.
+
+The v0.10.4 files in this directory are retained for existing installations.
+They predate the GPIO35 hardware reset and GPIO21 AG1171 power control used by
+the current illustrated build.

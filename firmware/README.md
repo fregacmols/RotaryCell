@@ -1,14 +1,14 @@
 # Firmware
 
-The earlier stable firmware is
-[`current/ESP-RotaryCell_v0.10.4`](current/ESP-RotaryCell_v0.10.4/).
+The current supported firmware is
+[`current/ESP-RotaryCell_v0.11.1-dev`](current/ESP-RotaryCell_v0.11.1-dev/).
+It is the firmware used by the illustrated PCB build and implements the GPIO35
+hardware-reset trigger and GPIO21 AG1171 power control used by the current
+Audio/Reset A4 and carrier-board wiring.
 
-The illustrated PCB build requires
-[`../development/firmware/ESP-RotaryCell_v0.11.1-dev`](../development/firmware/ESP-RotaryCell_v0.11.1-dev/).
-That version implements the GPIO35 hardware-reset trigger and GPIO21 AG1171
-power control used by the current Audio/Reset A4 and carrier-board wiring. It
-remains development-labelled until it is promoted to a numbered stable release,
-but it is the supported firmware for following the build guide.
+The version remains development-labelled while endurance and automatic modem
+recovery work continues. The earlier stable v0.10.4 source is retained under
+[`archive/ESP-RotaryCell_v0.10.4`](archive/ESP-RotaryCell_v0.10.4/).
 
 ## Build environment used
 
@@ -26,7 +26,7 @@ The firmware uses WiFi, WebServer, LittleFS, Update, and other libraries supplie
 with the ESP32 Arduino core. No separate third-party Arduino library is required.
 
 For the illustrated build, open
-`development/firmware/ESP-RotaryCell_v0.11.1-dev/ESP-RotaryCell_v0.11.1-dev.ino`
+`firmware/current/ESP-RotaryCell_v0.11.1-dev/ESP-RotaryCell_v0.11.1-dev.ino`
 in Arduino IDE, select the settings above, and compile or upload normally. The
 complete FQBN is recorded in the root
 [FIRMWARE_BUILDING.md](../FIRMWARE_BUILDING.md).

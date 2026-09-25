@@ -25,9 +25,10 @@ keep the whole folder together.
 
 This is the **required firmware for the illustrated PCB build**. It implements
 the GPIO35 hardware reset and GPIO21 AG1171 power control used by the guide.
-The repository still retains v0.10.4 as the earlier stable firmware, but that
-release predates those two connections and is not the correct choice for this
-build.
+The repository's [`firmware/current`](https://github.com/fregacmols/RotaryCell/tree/main/firmware/current)
+folder now points to this guide firmware. Version 0.10.4 is retained in the
+archive for existing installations, but it predates those two connections and
+is not the correct choice for this build.
 
 ## 2. Connect the controller
 

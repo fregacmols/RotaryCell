@@ -2,11 +2,11 @@
 
 The illustrated build guide uses:
 
-`development/firmware/ESP-RotaryCell_v0.11.1-dev/ESP-RotaryCell_v0.11.1-dev.ino`
+`firmware/current/ESP-RotaryCell_v0.11.1-dev/ESP-RotaryCell_v0.11.1-dev.ino`
 
 This is the required guide firmware because it implements the GPIO35 hardware
 reset and GPIO21 AG1171 power-down connections fitted to the current PCB build.
-Version 0.10.4 remains in `firmware/current/` as the earlier stable release, but
+Version 0.10.4 remains in `firmware/archive/` as the earlier stable release, but
 it predates those connections.
 
 ## Known working toolchain
@@ -40,11 +40,11 @@ The firmware uses only facilities supplied by the ESP32 Arduino core: Wi-Fi, `We
 
 ## Prebuilt file
 
-`firmware/prebuilt/ESP-RotaryCell_v0.10.4.ino.bin` is retained for existing
-v0.10.4 installations. It is an application-only OTA binary and is **not** a
-complete merged factory-flash image or the firmware used by the illustrated
-PCB guide. Initial installation of the guide firmware is made from source over
-USB.
+`firmware/prebuilt/RotaryCell_v0.11.1-dev_OTA.bin` is the application-only OTA
+binary for the current guide firmware. It is intended for updates through the
+RotaryCell maintenance page and is **not** a complete merged factory-flash
+image. Initial installation is made from source over USB. The older v0.10.4
+binary and source package remain alongside it for existing installations.
 
 Build directories, maps, ELF files, local Arduino paths, and other reproducible compiler output are deliberately excluded from the repository.
 

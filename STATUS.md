@@ -2,9 +2,8 @@
 
 **Baseline date:** September 25, 2026
 
-**Stable firmware:** v0.10.4
-**Active development firmware:** v0.11.1-dev
-**Guide firmware:** v0.11.1-dev
+**Current supported and guide firmware:** v0.11.1-dev
+**Earlier stable firmware retained for existing installations:** v0.10.4
 **Hardware phase:** Multiple complete PCB-based conversions operational and documented; reliability work continues
 
 ## Tested on the hand-wired prototype

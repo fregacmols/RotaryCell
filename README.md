@@ -34,8 +34,8 @@ carrier boards.
 | Path | Contents |
 | --- | --- |
 | [`guide/`](guide/) | Source, photographs, diagrams, and downloads for the illustrated build guide |
-| [`firmware/current/`](firmware/current/) | Stable firmware source |
-| [`firmware/prebuilt/`](firmware/prebuilt/) | Prebuilt firmware and source archive |
+| [`firmware/current/`](firmware/current/) | Current firmware source used by the illustrated guide |
+| [`firmware/prebuilt/`](firmware/prebuilt/) | Web-uploadable firmware binaries and retained release packages |
 | [`development/firmware/`](development/firmware/) | Active development firmware |
 | [`hardware/`](hardware/) | PCB source, manufacturing files, printable hardware, and archived designs |
 | [`docs/`](docs/) | Engineering notes, architecture, bring-up records, and project history |
