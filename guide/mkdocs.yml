@@ -1,0 +1,59 @@
+site_name: RotaryCell · Build guide
+site_description: Bring a classic telephone back into everyday use.
+site_url: https://fregacmols.github.io/RotaryCell/
+site_dir: site-build
+use_directory_urls: false
+repo_url: https://github.com/fregacmols/RotaryCell
+repo_name: fregacmols/RotaryCell
+edit_uri: edit/main/guide/docs/
+theme:
+  name: material
+  custom_dir: overrides
+  font: false
+  palette:
+    primary: custom
+    accent: custom
+  features:
+    - content.action.edit
+    - navigation.footer
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+extra_css:
+  - styles.css
+nav:
+  - Start here: index.md
+  - Complete wiring overview: wiring-overview.md
+  - 1 · Materials and sourcing:
+      - Bill of materials: materials.md
+      - Through-hole parts: digikey-parts.md
+      - Order the PCBs: ordering.md
+      - Print the mounting parts: printed-parts.md
+  - 2 · Prepare the LilyGO:
+      - Preparation map: lilygo.md
+      - Remove the battery holder: lilygo-holder.md
+      - Add the connections: lilygo-connections.md
+      - Inspect the controller: lilygo-inspection.md
+  - 3 · Boards and wiring:
+      - Populate the carrier: assembly.md
+      - Prepare the cables: harnesses.md
+      - Battery leads: battery.md
+  - 4 · Firmware and cellular setup:
+      - Upload the firmware: firmware.md
+      - Set up the SIM: sim.md
+  - 5 · Installation in the phone:
+      - Mount the assemblies: mounting.md
+      - Rear connector options: connector.md
+      - Test and adjust audio: audio.md
+      - Close the case: closing.md
+  - 6 · Final checks:
+      - Test your RotaryCell: checks.md
