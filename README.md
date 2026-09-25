@@ -10,16 +10,22 @@ The working prototype can be carried and operated away from a fixed telephone co
 
 **[Watch the brief RotaryCell introduction and demonstration on YouTube](https://youtu.be/PO0PJNvnMdw).**
 
-> [!IMPORTANT]
-> **Build status — September 18, 2026:** Firmware v0.10.4 remains the stable public baseline. The actively tested PCB build now runs **v0.11.1-dev**, which adds the A4 hardware-reset trigger, optional AG1171 idle power saving, optional INA226/microSD power logging, reset diagnostics, maintenance-log downloads, and improved maintenance Wi-Fi controls. These newer sources are published under [`development/firmware`](development/firmware/) while endurance testing and automatic modem-failure detection continue. Check [STATUS.md](STATUS.md) before ordering boards or parts.
+## Build RotaryCell
 
-## Reproduce the working prototype by hand
+The illustrated **[RotaryCell build guide](https://fregacmols.github.io/RotaryCell/)** is the recommended construction path. It walks through sourcing, PCB ordering, LilyGO preparation, board assembly, wiring, firmware, installation, and final testing using the Audio/Reset A4 and AG1171 carrier boards.
 
-The complete point-to-point wiring and component reference is the primary starting point for recreating the proven hand-wired prototype:
+Its editable source is kept in [`guide/`](guide/); engineering records and earlier hardware documentation remain in their existing repository folders.
+
+> [!NOTE]
+> **Project status — September 2026:** The photographed PCB build is operational for incoming and outgoing calls, rotary dialing, ringing, handset audio, charging, and hardware reset. Firmware v0.10.4 is the stable public baseline; newer development sources are available under [`development/firmware`](development/firmware/). Ongoing firmware and endurance work is recorded in [STATUS.md](STATUS.md).
+
+## Legacy hand-wired prototype reference
+
+The first working prototype was assembled point-to-point before the dedicated PCBs were available. Its wiring and component reference is retained as an engineering record:
 
 [![RotaryCell complete prototype wiring and component schematic](docs/images/complete-prototype-wiring.png)](docs/RotaryCell_Complete_Prototype_Wiring.pdf)
 
-**[Open or download the full-resolution printable PDF](docs/RotaryCell_Complete_Prototype_Wiring.pdf).** It covers the LilyGO, protected 21700, passive audio components, AG1171, GPIO connections, and original Model 500 circuitry without using the new PCBs. A hand-wired installation fits inside the telephone, but arranging and insulating all of the loose components and wiring is challenging; expect repeated dry-fitting and careful routing.
+**[Open or download the full-resolution printable PDF](docs/RotaryCell_Complete_Prototype_Wiring.pdf).** It covers the LilyGO, protected 21700, passive audio components, AG1171, GPIO connections, and original Model 500 circuitry without using the new PCBs. This is not an equivalent alternative to the build guide: arranging, insulating, and troubleshooting all of the loose components and wiring is substantially more difficult, and the prototype documents do not describe the present PCB assembly process.
 
 ## Current baseline
 
@@ -31,7 +37,7 @@ This repository records the current tested baseline as of **September 18, 2026**
 - Incoming and outgoing calls, rotary dialing, ringing, audio, manual hardware reset through service code `9999`, and AG1171 idle power saving have operated on assembled PCB builds.
 - The manual hardware reset recovered a field-observed state in which incoming calls went directly to voicemail. Automatic detection and recovery of that failure is still future work.
 - The optional INA226/microSD logger has recorded long-duration current data; its current measurements are useful, while its bus-voltage and calculated-power fields still require correction.
-- The manufacturing packages remain archived exactly as submitted; first-build details and measurements are still being documented.
+- The manufacturing packages are archived exactly as submitted and are the versions used by the illustrated build guide.
 
 See [STATUS.md](STATUS.md) for the distinction between tested behavior and the validation work still in progress.
 
@@ -57,10 +63,11 @@ The telephone's RJ11 line jack is used only to deliver regulated 5 V to the Lily
 | `hardware/prototype` | Material associated with the working hand-wired prototype |
 | `hardware/experimental` | Unfinalized schematics, layouts, libraries, and alternatives |
 | `hardware/legacy` | Older hardware documentation retained for reference |
+| `guide` | Primary illustrated construction guide and its web source |
 | `docs` | Architecture, bring-up, and historical documentation |
 | `site` | Draft project-page copy for evilroot.net |
 
-For a hand-wired build, start with the [complete prototype wiring reference](docs/RotaryCell_Complete_Prototype_Wiring.pdf). For the newer PCB implementation, continue with [STATUS.md](STATUS.md), [current hardware wiring](docs/HARDWARE_WIRING.md), the [master BOM](docs/MASTER_BOM.md), and the [assembly guide](docs/ASSEMBLY_GUIDE.md). Instructions for compiling the software are kept separately in [FIRMWARE_BUILDING.md](FIRMWARE_BUILDING.md).
+To build RotaryCell, start with the [illustrated build guide](https://fregacmols.github.io/RotaryCell/) and use [STATUS.md](STATUS.md) for current validation notes. The older [prototype wiring reference](docs/RotaryCell_Complete_Prototype_Wiring.pdf), [hardware wiring](docs/HARDWARE_WIRING.md), [master BOM](docs/MASTER_BOM.md), and [assembly guide](docs/ASSEMBLY_GUIDE.md) remain available as engineering references. Instructions for compiling the software are kept separately in [FIRMWARE_BUILDING.md](FIRMWARE_BUILDING.md).
 
 ## Current functions
 
@@ -82,13 +89,15 @@ Dial service code `0000` starts maintenance Wi-Fi. The USB console command `WIFI
 - Clearly label the charging jack and verify its regulated voltage, polarity, pin assignment, and protection before use.
 - Lithium-ion cells require suitable protection, charging, fusing, insulation, and mechanical restraint.
 - The maintenance access point uses the development password `rotarycell`. Change `WIFI_AP_PASSWORD` in `Config.h` before use around untrusted people.
-- The August 2026 PCB files are **as ordered**. The first assembly has passed initial functional testing but is not yet a production-qualified design. Create a new revision rather than silently replacing an as-ordered package.
+- The August 2026 PCB files are preserved **as ordered**. Record later board changes as a new revision rather than silently replacing that package.
 
 ## Repository policy
 
-This is a public engineering and development archive. It is intended to preserve a durable, reproducible baseline, make the working hand-wired prototype available to other builders, and document progress toward a more integrated implementation.
-
-The repository should not be mistaken for a finished construction kit or production release. Files under `hardware/audio-reset-a4` and `hardware/ag1171-carrier-through-hole` record the exact board candidates ordered in August 2026. Their first assembled operation and the v0.11.1-dev reset and power-saving controls have passed initial testing. Longer-term reliability, automatic modem-failure recovery, and construction documentation remain in progress. Tested behavior, known failures, and remaining documentation gaps are tracked in [STATUS.md](STATUS.md).
+This public repository preserves the tested firmware, board files, illustrated
+construction guide, and the engineering history behind RotaryCell. Files under
+`hardware/audio-reset-a4` and `hardware/ag1171-carrier-through-hole` record the
+exact boards used in the photographed builds. Continuing firmware and
+reliability work is tracked in [STATUS.md](STATUS.md).
 
 ## License
 

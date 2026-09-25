@@ -30,3 +30,7 @@ scratch/
 
 # Generated development source bundles (source directories are authoritative)
 development/firmware/*.zip
+
+# Generated standalone build-guide output
+/guide/site-build/
+/guide/.venv/

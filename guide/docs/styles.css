@@ -1,0 +1,43 @@
+
+:root { --md-primary-fg-color:#742f3b; --md-accent-fg-color:#a44b3c; }
+body {font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#fcfaf6;}
+.md-banner {background:#382b29;color:#f8eee5;}
+.md-banner__inner {margin-top:.45rem;margin-bottom:.45rem;}
+.preview-notice {display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap;font-size:.72rem;}
+.preview-notice strong {text-transform:uppercase;letter-spacing:.09em;}
+.preview-notice a {color:#f4c9ba;text-decoration:underline;text-underline-offset:.15em;}
+.md-header {box-shadow:none;border-bottom:1px solid #ffffff30;}
+.md-sidebar--secondary,
+.md-sidebar--secondary:not([hidden]) {display:none!important;}
+.md-typeset h1 {font-family:Georgia,serif;font-size:2.6em;color:#322c2b;line-height:1.12;letter-spacing:-.035em;}
+.md-typeset h2 {font-weight:650;color:#463330;}
+.md-typeset {font-size:.8rem;line-height:1.7;}
+.kicker {color:#8e4e44;font-size:.68rem;letter-spacing:.15em;font-weight:700;text-transform:uppercase;}
+.lead {font-size:1.1rem;color:#65554d;max-width:34em;margin-bottom:1.5rem;}
+.hero {display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.92fr);align-items:center;gap:2.1rem;padding:2.2rem 2.3rem;background:linear-gradient(135deg,#f2eade 0%,#eadccd 100%);border-radius:16px;margin:1.2rem 0 2.2rem;border-left:6px solid #742f3b;box-shadow:0 10px 32px #4b30200d;}
+.hero h1 {margin:.45rem 0 1rem;max-width:12em;}
+.hero .md-button {margin-bottom:0;}
+.hero-visual img {display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:0 10px 24px #3c291f24;}
+.hero-visual span {display:block;margin-top:.55rem;color:#79665d;font-size:.65rem;text-align:right;letter-spacing:.025em;}
+.intro-notes {display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:0 0 2.7rem;}
+.intro-notes section {padding:1.5rem 1.6rem;background:#fff;border:1px solid #e3d9ce;border-radius:12px;box-shadow:0 5px 20px #4b302008;}
+.intro-notes h2 {font-family:Georgia,serif;font-size:1.16rem;margin:.2rem 0 .65rem;color:#3f3330;}
+.intro-notes p {margin:0;color:#665953;line-height:1.62;}
+.note-label {font-size:.61rem;font-weight:750;letter-spacing:.13em;text-transform:uppercase;color:#995747;}
+.journey {display:flex;flex-direction:column;gap:.72rem;margin:1.6rem 0 2rem;}
+.journey-step {display:grid;grid-template-columns:3.25rem 1fr 1.5rem;align-items:center;gap:1rem;min-height:5.1rem;padding:.9rem 1.15rem;border:1px solid #e0d6cc;border-radius:12px;background:#fff;color:#40332e!important;box-shadow:0 4px 16px #4b302008;transition:border-color .16s ease,transform .16s ease,box-shadow .16s ease;}
+.journey-step:hover {border-color:#b98a7f;transform:translateX(3px);box-shadow:0 7px 22px #4b302012;}
+.journey-step.featured {background:#f5eee5;border-color:#d9bdb2;}
+.step-number {display:grid;place-items:center;width:2.7rem;height:2.7rem;border-radius:50%;background:#f0e6dd;color:#803e40;font-family:Georgia,serif;font-size:1rem;font-weight:700;}
+.featured .step-number {background:#742f3b;color:#fff;}
+.step-copy {display:flex;flex-direction:column;gap:.24rem;}
+.step-copy strong {font-size:.92rem;color:#4a3532;}
+.step-copy small {font-size:.75rem;line-height:1.45;color:#72635d;}
+.step-copy em {display:inline-block;margin-left:.45rem;padding:.13rem .42rem;border-radius:999px;background:#ead9cf;color:#87483e;font-size:.57rem;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-style:normal;letter-spacing:.04em;text-transform:uppercase;vertical-align:.12rem;}
+.step-arrow {font-size:1.1rem;color:#a26659;transition:transform .16s ease;}
+.journey-step:hover .step-arrow {transform:translateX(3px);}
+.photo {border:1px dashed #bcaea0;border-radius:10px;min-height:180px;background:repeating-linear-gradient(135deg,#f3eee6,#f3eee6 12px,#f6f2ec 12px,#f6f2ec 24px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;color:#756353;margin:1.4rem 0;}
+.photo b {text-transform:uppercase;letter-spacing:.13em;font-size:.7rem;margin-bottom:.5rem;}
+.checkpoint {padding:1rem 1.3rem;background:#edf1e9;border-left:4px solid #6a7d54;margin:1.6rem 0;}
+.md-footer {background:#433531;}
+@media(max-width:700px){.intro-notes{grid-template-columns:1fr}.hero{grid-template-columns:1fr;padding:1.7rem 1.4rem 1.4rem;gap:1.35rem}.md-typeset h1{font-size:2.1em}.journey-step{grid-template-columns:2.7rem 1fr 1rem;gap:.7rem;padding:.8rem}.step-number{width:2.35rem;height:2.35rem}.step-copy em{display:table;margin:.3rem 0 0}.hero-visual span{text-align:left}}
