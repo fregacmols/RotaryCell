@@ -1,6 +1,6 @@
 # PCB connector pin guide
 
-**Build baseline:** firmware v0.10.4, Audio and Reset A4, and AG1171 Carrier Through-Hole.
+**Build baseline:** required guide firmware v0.11.1-dev, Audio and Reset A4, and AG1171 Carrier Through-Hole.
 
 ## How to identify the installed JST pins
 
@@ -47,16 +47,16 @@ These are board-side views. A loose female cable housing can appear reversed whe
 | `SPEK+` | Audio A4 J1 pin 3 | Receive audio from LilyGO |
 | `MIC+` | Audio A4 J1 pin 4 | Transmit audio to LilyGO |
 | `SPEK−` | No connection | Leave floating and insulate |
-| `MIC−` | 1 uF film/bipolar capacitor, then GND | External AC ground reference |
+| `MIC−` | 1 uF nonpolar capacitor, then GND | External AC ground reference; documented build uses radial ceramic |
 | GPIO15 | Carrier U3 pin 1 | AG1171 `FR` |
 | GPIO16 | Carrier U3 pin 2 | AG1171 `RM` |
 | GPIO37 | Carrier U3 pin 3 | AG1171 `SHK` |
-| GPIO21 | Carrier U3 pin 4 | AG1171 `PD` through D2/BAT85; high-impedance normally and LOW for power-down; never drive HIGH |
+| GPIO21 | Carrier U3 pin 4 | AG1171 `PD` through D2/1N4148; high-impedance normally and LOW for power-down; never drive HIGH |
 | `VBAT` header pad | Carrier CN1 pin 2 | AG1171 `VPWR` |
 | System GND | Carrier CN1 pin 1 | AG1171 power return; do not connect to holder negative/`BATN` |
-| LilyGO SW3 board-side pad | Audio A4 U2 pin 1 | `SW_BAT`; exact physical pad still to be confirmed |
-| LilyGO SW3 battery-side pad | Audio A4 U2 pin 2 | `RAW_BAT`; exact physical pad still to be confirmed |
-| GPIO35 | Audio A4 U2 pin 3 | Rising-edge reset trigger; leave harness unplugged until the reset board is bench-tested |
+| LilyGO SW3 center terminal | Audio A4 U2 pin 1 | `SW_BAT`; confirm with continuity before soldering |
+| LilyGO SW3 battery-side pad | Audio A4 U2 pin 2 | `RAW_BAT`; confirm against the guide close-up and with continuity |
+| GPIO35 | Audio A4 U2 pin 3 | Rising-edge reset trigger used by the required guide firmware |
 
 GPIO35 is adjacent to the GPIO36 tone pad. GPIO15, GPIO16, GPIO37, and GPIO21 are four consecutive pads on the opposite LilyGO header, keeping the Audio/Reset and AG1171 harnesses physically grouped.
 

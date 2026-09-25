@@ -1,8 +1,13 @@
-# Building the current firmware
+# Building RotaryCell firmware
 
-The active sketch is:
+The illustrated build guide uses:
 
-`firmware/current/ESP-RotaryCell_v0.10.4/ESP-RotaryCell_v0.10.4.ino`
+`development/firmware/ESP-RotaryCell_v0.11.1-dev/ESP-RotaryCell_v0.11.1-dev.ino`
+
+This is the required guide firmware because it implements the GPIO35 hardware
+reset and GPIO21 AG1171 power-down connections fitted to the current PCB build.
+Version 0.10.4 remains in `firmware/current/` as the earlier stable release, but
+it predates those connections.
 
 ## Known working toolchain
 
@@ -17,7 +22,7 @@ The active sketch is:
 - PSRAM: **Disabled**
 - Partition scheme: **Minimal SPIFFS (Large APP with OTA)** (`min_spiffs`)
 
-The complete sanitized FQBN used for the archived build is:
+The complete sanitized FQBN used for the documented builds is:
 
 ```text
 esp32:esp32:esp32s3:UploadSpeed=921600,USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,CPUFreq=240,FlashMode=qio,FlashSize=16M,PartitionScheme=min_spiffs,DebugLevel=none,PSRAM=disabled,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default
@@ -35,7 +40,11 @@ The firmware uses only facilities supplied by the ESP32 Arduino core: Wi-Fi, `We
 
 ## Prebuilt file
 
-`firmware/prebuilt/ESP-RotaryCell_v0.10.4.ino.bin` is the application-only binary produced from the archived v0.10.4 source. It is suitable for the firmware's web OTA updater when the target already has a compatible OTA partition table. It is **not** a complete merged factory-flash image.
+`firmware/prebuilt/ESP-RotaryCell_v0.10.4.ino.bin` is retained for existing
+v0.10.4 installations. It is an application-only OTA binary and is **not** a
+complete merged factory-flash image or the firmware used by the illustrated
+PCB guide. Initial installation of the guide firmware is made from source over
+USB.
 
 Build directories, maps, ELF files, local Arduino paths, and other reproducible compiler output are deliberately excluded from the repository.
 

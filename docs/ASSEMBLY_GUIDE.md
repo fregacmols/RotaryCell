@@ -1,6 +1,9 @@
-# Current hardware assembly guide
+# Superseded prototype assembly notes
 
-This guide covers assembly of the August 2026 board candidates and the confirmed inter-board harnesses. It intentionally stops where the present record lacks a physical terminal or mounting detail. Use [Current hardware wiring](HARDWARE_WIRING.md), [Master BOM](MASTER_BOM.md), and [First-board bring-up](BRINGUP.md) alongside it.
+> **Historical reference:** These notes predate the photographed construction
+> guide and are retained to explain first-board bring-up. For a current build,
+> follow the [illustrated RotaryCell build guide](../guide/README.md). Where the
+> two differ, the illustrated guide is authoritative.
 
 ## 1. Prepare the telephone
 
@@ -40,7 +43,7 @@ Make one three-conductor straight-through JST-XH cable:
 Make one four-conductor cable following J1 in [HARDWARE_WIRING.md](HARDWARE_WIRING.md). At the LilyGO audio connectors:
 
 - Leave `SPEK-` unconnected and insulated. Do not ground it.
-- Connect `MIC-` to common ground through a 1 uF film or bipolar capacitor located at the LilyGO/harness.
+- Connect `MIC-` to common ground through a 1 uF nonpolar capacitor located at the LilyGO/harness. The documented build uses a radial ceramic part.
 
 These connections follow the working prototype's RevA2 passive-audio reference. The four J1 conductors remain GPIO36, GND, `SPEK+`, and `MIC+`.
 
@@ -51,28 +54,28 @@ Make one four-conductor cable:
 - Carrier U3 pin 1 -> GPIO15 (`FR`)
 - Carrier U3 pin 2 -> GPIO16 (`RM`)
 - Carrier U3 pin 3 -> GPIO37 (`SHK`)
-- Carrier U3 pin 4 -> leave disconnected until the AG1171 `PD` GPIO is assigned and tested
+- Carrier U3 pin 4 -> GPIO21 (`PD`); firmware must leave it high-impedance normally and pull it LOW only for power-down
 
 ## 5. Initial powered assembly
 
-1. Leave the AG1171 `PD` lead and the A4 reset harness disconnected.
-2. Use the protected 21700 or a current-limited bench supply set to an appropriate single-cell Li-ion voltage. Connect carrier CN1 pin 1 to cell negative/common ground and pin 2 directly to cell positive/VPWR. Never apply the regulated 5 V charging input to CN1.
+1. Use the required guide firmware before connecting the AG1171 `PD` lead and A4 reset harness.
+2. Connect the cell only to LilyGO battery positive and `BATN`. Connect carrier CN1 pin 1 to LilyGO system GND and pin 2 to LilyGO `VBAT`. Never connect carrier ground directly to `BATN`, and never apply the regulated 5 V charging input to CN1.
 3. Verify cell voltage and polarity at AG1171 pins 12 and 13.
 4. Connect the LilyGO/audio and audio/carrier harnesses.
 5. Power the LilyGO and perform the staged tests in [COMMISSIONING.md](COMMISSIONING.md).
 
-## 6. Telephone and charging connections - documentation required
+## 6. Telephone and charging connections
 
-Carrier CN2 provides Ring(B) on pin 1 and Tip(A) on pin 2, but this guide does not yet identify the exact Model 500 network-block screw terminals. Likewise, it does not establish the RJ11 pins that deliver regulated 5 V to the LilyGO charging input. Do not infer either connection from wire color or jack position.
+Carrier CN2 provides Ring(B) on pin 1 and Tip(A) on pin 2. Network-block
+terminals vary, so trace the telephone's original incoming line or use its
+schematic rather than copying a photograph from another phone. The current
+build replaces the original rear connector with the printed USB-C insert and
+uses only the breakout board's `V+` and GND pads. See the illustrated guide for
+the photographs and connector options.
 
-Before publication as a reproducible build, add:
+## 7. Historical mechanical arrangement
 
-- A straight-on photograph of the network block with the two connection terminals labeled.
-- Front and rear photographs of the RJ11 jack with pin numbering, regulated 5 V polarity, and protection shown.
-- A close-up of the LilyGO power switch with `RAW_BAT` and `SW_BAT` solder points labeled.
-
-## 7. Mechanical installation - provisional
-
-The working arrangement places the LilyGO toward the front of the telephone, the 21700 between the internal sheet-metal posts, and the smaller boards to either side as clearance permits. A finalized snap-in LilyGO/21700 carrier is not yet part of the repository. Secure every assembly against movement, insulate it from the metal base and mechanism, preserve dial clearance, and keep the cellular antenna away from low-level audio wiring.
-
-The installation is not complete until the mechanical carrier and cable strain relief are documented and validated with the telephone housing closed.
+The current printable carriers, mounting photographs and closure checks are in
+the illustrated guide. Secure every assembly against movement, insulate it
+from the metal base and mechanism, preserve dial clearance and keep the
+cellular antenna away from low-level audio wiring.

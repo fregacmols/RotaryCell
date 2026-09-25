@@ -1,4 +1,8 @@
-# Master bill of materials
+# Master engineering bill of materials
+
+> **Construction note:** The current purchasing list is in the
+> [illustrated build guide](../guide/docs/materials.md). This longer document is
+> retained as an engineering inventory and includes historical detail.
 
 **Baseline:** August 28, 2026
 
@@ -13,10 +17,10 @@ This BOM combines the major system items with the two ordered board assemblies. 
 | 1 | Cellular antenna | Compatible antenna and feed for the LilyGO modem | Normally supplied with board |
 | 1 | SIM and service | Voice-capable SIM/service compatible with the modem and local network | Installation-specific |
 | 1 | Subscriber-line interface | Silvertel AG1171-S | Carrier-mounted |
-| 1 | Cell | [Samsung 58E 21700](https://www.18650batterystore.com/products/samsung-58e-21700-battery), flat-top unprotected 5330 mAh cell | Spot-welded tabs; uses the LilyGO board's charging and battery-protection path; directly feeds LilyGO battery pads and carrier CN1 |
-| 1 | Audio/reset PCB | Audio and Reset A4 | Ordered; awaiting validation |
-| 1 | Carrier PCB | AG1171 Carrier Through-Hole | Ordered; awaiting validation |
-| 1 | Charging source | Regulated 5 V input through the RJ11 to the LilyGO charging input | Does not directly power carrier CN1 |
+| 1 | Cell | [Samsung 58E 21700](https://www.18650batterystore.com/products/samsung-58e-21700-battery), flat-top unprotected 5330 mAh cell | Spot-welded tabs; the cell alone connects to LilyGO battery positive and `BATN` |
+| 1 | Audio/reset PCB | Audio and Reset A4 | Assembled and tested in multiple builds |
+| 1 | Carrier PCB | AG1171 Carrier Through-Hole | Assembled and tested in multiple builds |
+| 1 | Charging source | Regulated 5 V through the documented rear USB-C breakout | Connects only to the LilyGO charging input and system GND |
 
 ## LilyGO controller/modem
 
@@ -72,22 +76,21 @@ Summary:
 | 2 | JST XHP-4 housing plus crimp contacts | LilyGO/audio harness and LilyGO/carrier logic harness |
 | 3 | JST XHP-3 housing plus crimp contacts | Both ends of audio-to-carrier cable plus reset harness |
 | 2 | JST XHP-2 housing plus crimp contacts | Carrier power and internal Tip/Ring harnesses |
-| 1 | 1 uF film or bipolar capacitor | AC-reference LilyGO `MIC-` to common ground at the LilyGO/harness |
+| 1 | 1 uF nonpolar capacitor | AC-reference LilyGO `MIC-` to common ground at the LilyGO/harness; the documented build uses Murata RDER71H105K2M1H03A radial ceramic |
 | As required | Stranded hookup wire, heat-shrink, sleeving, strain relief | Harness construction |
 | As required | Fuse/protection, insulated battery harness, connectors | Final battery and charging design |
 | As required | Nonconductive mounting hardware or printed carrier | Mechanical installation; design pending |
 
 Housing counts assume the PCB headers listed above and a straight-through J2-to-U2 audio cable. Verify actual pre-crimped harness availability and pin order before purchase.
 
-The 21700 positive lead branches to both the LilyGO battery pads and carrier CN1 pin 2. Cell negative/common ground connects to the LilyGO and carrier CN1 pin 1. The regulated 5 V RJ11 input is a separate charging path into the LilyGO.
+The cell connects only to the LilyGO battery-positive and `BATN` points. Carrier
+CN1 pin 2 receives `VBAT` from the LilyGO, while CN1 pin 1 returns through
+LilyGO **system GND**. Do not connect carrier ground to `BATN`; doing so bypasses
+the LilyGO's low-side battery protection. The regulated 5 V rear USB-C input is
+a separate charging path into the LilyGO.
 
 The external 1 uF `MIC-` reference capacitor corresponds to C6 in the RevA2 prototype audio drawing. Do not confuse it with C6 on the A4 PCB BOM, which is a 4.7 uF reset-timing capacitor.
 
-## Not yet purchase-ready
-
-The following still require an exact part number or documented implementation before this becomes a complete procurement BOM:
-
-- Any final inline fuse or removable battery connector.
-- The regulated 5 V charging source and RJ11 charging harness.
-- The LilyGO power-switch/reset harness attachment method.
-- The final printed mechanical carrier and its hardware.
+For current supplier links, rear-connector parts, printed carriers and the
+tested harness implementation, use the illustrated guide rather than this
+engineering inventory.

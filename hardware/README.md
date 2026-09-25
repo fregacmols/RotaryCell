@@ -1,8 +1,12 @@
 # Hardware files
 
-The hardware archive is divided by confidence and purpose. The two August 2026 board directories are immutable records of the exact packages ordered from JLCPCB; they are not yet validated production designs.
+The hardware archive is divided by confidence and purpose. The two August 2026
+board directories are immutable records of the exact packages ordered from
+JLCPCB. Both have been assembled and tested in multiple working RotaryCell
+conversions; they are open hardware rather than formally production-qualified
+designs.
 
-## Ordered board candidates
+## Tested as-ordered boards
 
 ### Audio and Reset A4
 

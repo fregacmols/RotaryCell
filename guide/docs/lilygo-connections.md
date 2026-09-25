@@ -9,12 +9,12 @@ show the connector orientation and routing used in the working build.
 
 Four harnesses attach to the LilyGO. From left to right in the photograph:
 
-| Harness | Wire identification used in this build |
+| Harness | Connections |
 | --- | --- |
-| Charging input | 10 cm red and black pair with red two-position connector |
-| 21700 battery | 10 cm pair; yellow is unswitched battery positive and black is battery negative |
-| AG1171 carrier power | 10 cm red and black pair with white two-position connector |
-| AG1171 carrier signals | Four 10 cm signal wires in a white connector; the blue conductor marks orientation |
+| Charging input | 10 cm pair from regulated 5 V and system GND |
+| 21700 battery | 10 cm pair from cell positive and cell negative to `BATN` |
+| AG1171 carrier power | 10 cm pair from LilyGO `VBAT` and system GND |
+| AG1171 carrier signals | Four 10 cm conductors for GPIO15 `FR`, GPIO16 `RM`, GPIO37 `SHK` and GPIO21 `PD` |
 
 Throughout this build, **black is negative** and **yellow identifies unswitched
 battery positive**. The blue wire in the four-conductor signal harness is an
@@ -40,8 +40,8 @@ leaving a large loop inside the phone.
 
 ## Audio and tone
 
-The Audio/Reset A4 harness uses GPIO36 for generated telephone tones, common
-ground, `SPEK+` and `MIC+`.
+The Audio/Reset A4 harness uses the GPIO36 audio signal, GND, `SPEK+` and
+`MIC+`.
 
 - Leave `SPEK-` insulated and floating.
 - Connect `MIC-` to system ground through the external nonpolar 1 µF
@@ -92,27 +92,35 @@ positions with a meter rather than inferring their order from wire colors.
 
 ## Hardware reset
 
-Connect GPIO35 to the A4 trigger input. The other two A4 reset conductors attach
-across the LilyGO physical power-switch path so the A4 board can remove and
-restore battery power. The installed close-up below shows the two switch points
-used for `RAW_BAT` and `SW_BAT` on the working assembly.
+Connect the A4 reset header by signal name:
+
+| Audio/Reset A4 | LilyGO connection |
+| --- | --- |
+| U2 pin 1, `SW_BAT` | Center terminal of the LilyGO power switch |
+| U2 pin 2, `RAW_BAT` | Battery-side switch pad shown in the installed close-up |
+| U2 pin 3, `RESET` | GPIO35 |
+
+The first two connections bridge the physical power-switch path so the A4 board
+can remove and restore battery power. Before soldering, use continuity mode to
+confirm the center terminal and the battery-side pad on your board revision;
+do not identify either connection by wire color alone.
 
 ![Prepared three-wire hardware-reset harness](images/lilygo-reset-harness.jpg)
 
 For the reset harness shown above:
 
-| Wire | Length | Gauge | Purpose |
-| --- | ---: | ---: | --- |
-| Red | 16 cm | 24 AWG | Power-switch path |
-| Yellow | 16 cm | 24 AWG | Power-switch path |
-| Green | 18 cm | 28 AWG | Reset trigger signal |
+| Signal | Length | Gauge |
+| --- | ---: | ---: |
+| `SW_BAT` | 16 cm | 24 AWG |
+| `RAW_BAT` | 16 cm | 24 AWG |
+| GPIO35 `RESET` | 18 cm | 28 AWG |
 
 The extra 2 cm on the green trigger wire allows it to follow the required route
 without pulling against the two power-switch conductors.
 
 ![Close view of the power-switch taps and lower GPIO connections](images/lilygo-reset-installed-closeup.jpg)
 
-The red and yellow conductors start at the two switch points. The longer green
+The two battery-path conductors start at the switch points. The longer GPIO35
 trigger lead starts farther down the controller and joins them after following
 the board edge, which accounts for its additional 2 cm.
 

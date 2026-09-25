@@ -1,4 +1,8 @@
-# Current hardware wiring and connector pinouts
+# Hardware wiring and connector pinouts
+
+> The [illustrated build guide](../guide/README.md) is the current construction
+> authority. This page supplies additional electrical detail and retains the
+> hand-wired prototype reference below.
 
 ## Primary hand-wired prototype reference
 
@@ -24,7 +28,7 @@ flowchart LR
     C -->|Tip and Ring| N[Telephone network block]
     B[21700 cell] -->|BAT positive and BATN negative| L
     L -->|VBAT and protected system GND| C
-    CH[Regulated 5 V charging input via RJ11] -->|Charging input only| L
+    CH[Regulated 5 V through rear USB-C breakout] -->|Charging input only| L
     A -.->|RAW_BAT, SW_BAT, reset trigger| L
 ```
 
@@ -42,7 +46,7 @@ flowchart LR
 The ordered board uses one signal conductor in each audio direction. The working prototype follows the RevA2 audio reference for the two LilyGO negative audio terminals:
 
 - Leave `SPEK-` unconnected and floating. Never connect `SPEK-` to ground; the LilyGO speaker output is bridge-tied.
-- Connect `MIC-` to common ground only through a 1 uF film or bipolar capacitor. This AC reference is located at the LilyGO/harness rather than on the A4 audio PCB.
+- Connect `MIC-` to common ground only through a 1 uF nonpolar capacitor. The documented build uses a Murata RDER71H105K2M1H03A radial ceramic at the LilyGO/harness rather than on the A4 audio PCB.
 
 The 1 uF `MIC-` reference capacitor was called C6 in the RevA2 drawing. It is not the A4 board's C6; A4 C6 is the 4.7 uF reset-timing capacitor.
 
@@ -64,14 +68,18 @@ This cable is straight-through: 1-to-1, 2-to-2, and 3-to-3.
 | 2 | `RAW_BAT` | Raw cell-positive side of that switch path |
 | 3 | Trigger | LilyGO GPIO35 |
 
-The reset circuit shares ground through J1 pin 2. Firmware v0.10.4 does not assign U2 pin 3. Keep this harness unplugged until the one-shot and switch nodes have been verified with a meter. The schematic identifies the electrical nodes, but the exact LilyGO switch solder points still require a close-up photograph or pad-level drawing.
+The reset circuit shares ground through J1 pin 2. The required guide firmware
+uses GPIO35 for U2 pin 3. `SW_BAT` attaches to the center power-switch terminal;
+`RAW_BAT` attaches to the battery-side switch pad shown in the guide. Confirm
+the two nodes with a continuity meter before soldering because board revisions
+may differ.
 
 ### Audio paths
 
 - Receive: `SPEK+` -> C1 1 uF -> R1 10 kOhm -> SPK_LVL 10 kOhm -> C2 10 nF -> AG1171 `VIN`.
 - Tone injection: GPIO36 -> R2 3.3 kOhm with C3 22 nF to ground -> C4 220 nF -> R3 1 kOhm -> receive summing node.
 - Transmit: AG1171 `VOUT` -> C5 100 nF -> MIC_LVL 10 kOhm -> R4 10 kOhm -> `MIC+`.
-- LilyGO audio references: `SPEK-` remains floating; `MIC-` connects to common ground through an external 1 uF film/bipolar capacitor.
+- LilyGO audio references: `SPEK-` remains floating; `MIC-` connects to common ground through an external 1 uF nonpolar capacitor.
 
 ![Audio portion of the Audio and Reset A4 schematic](images/audio-a4-audio-schematic.png)
 
@@ -103,9 +111,10 @@ The LilyGO `VBAT` pad is on the cell-positive rail, but its exposed system GND i
 | 1 | `FR`, through R3 1 kOhm | GPIO15 |
 | 2 | `RM`, through R2 1 kOhm | GPIO16 |
 | 3 | `SHK`, through R1 1 kOhm | GPIO37 |
-| 4 | `PD`, through D2 BAT85 planned substitution | GPIO21; high-impedance normally and LOW for power-down; never drive HIGH |
+| 4 | `PD`, through D2 1N4148 | GPIO21; high-impedance normally and LOW for power-down; never drive HIGH |
 
-Firmware after v0.10.4 must implement GPIO21 as a low-or-high-impedance control. The AG1171 datasheet prohibits driving `PD` HIGH.
+The required guide firmware implements GPIO21 as a low-or-high-impedance
+control. The AG1171 datasheet prohibits driving `PD` HIGH.
 
 ### CN2 - telephone line, 2-pin JST-XH
 
@@ -114,7 +123,11 @@ Firmware after v0.10.4 must implement GPIO21 as a low-or-high-impedance control.
 | 1 | `Ring(B)`, AG1171 pin 1 | Telephone's internal line/network-block connection |
 | 2 | `Tip(A)`, AG1171 pin 2 | Telephone's internal line/network-block connection |
 
-The exact Model 500 network-block screw terminals are not established by these screenshots. Add a telephone-specific close-up and terminal designation before presenting this as a complete assembly instruction. This internal Tip/Ring pair must never be connected to the PSTN or energized premises wiring.
+Network-block screw terminals differ among telephone models and revisions.
+Trace the telephone's original incoming-line connection or consult its schematic
+rather than copying the photographed terminal positions or wire colors. This
+internal Tip/Ring pair must never be connected to the PSTN or energized premises
+wiring.
 
 ![AG1171 Carrier Through-Hole schematic](images/ag1171-carrier-through-hole-schematic.png)
 
@@ -135,11 +148,6 @@ The exact Model 500 network-block screw terminals are not established by these s
 | 13 | VPWR | CN1 pin 2 |
 | 14 | PD | U3 pin 4 through D2 |
 
-## Connections still requiring physical documentation
-
-1. Exact solder pads on the LilyGO physical power switch for `RAW_BAT` and `SW_BAT`.
-2. Exact telephone network-block terminals for CN2 Tip and Ring.
-3. RJ11 charging pin numbers, polarity, fuse/protection, and regulated 5 V source.
-4. Bench validation of the GPIO35 reset trigger and GPIO21 AG1171-PD control.
-
-Until these four items are recorded, this is a PCB interconnect specification rather than a complete telephone wiring diagram.
+The illustrated guide provides the installed-board photographs, printed carrier
+files, rear USB-C connector options and tested routing that are intentionally
+outside this electrical reference.

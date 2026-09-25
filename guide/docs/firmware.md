@@ -17,14 +17,17 @@ are required.
 Install Arduino IDE 2.x, open **Tools → Board → Boards Manager**, and install
 version **3.3.11** of **esp32 by Espressif Systems**.
 
-Download the firmware source and open the `.ino` file from its complete
-versioned folder. Arduino IDE should show the other `.cpp` and `.h` files as
-tabs alongside the sketch; keep the whole folder together.
+Download the
+[`ESP-RotaryCell_v0.11.1-dev` guide-firmware ZIP](downloads/ESP-RotaryCell_v0.11.1-dev-source.zip),
+extract it and open the `.ino` file from the complete versioned folder. Arduino
+IDE should show the other `.cpp` and `.h` files as tabs alongside the sketch;
+keep the whole folder together.
 
-The currently tested PCB build uses
-[`ESP-RotaryCell_v0.11.1-dev`](https://github.com/fregacmols/RotaryCell/tree/main/development/firmware/ESP-RotaryCell_v0.11.1-dev).
-The repository also keeps the current stable release under
-[`firmware/current`](https://github.com/fregacmols/RotaryCell/tree/main/firmware/current).
+This is the **required firmware for the illustrated PCB build**. It implements
+the GPIO35 hardware reset and GPIO21 AG1171 power control used by the guide.
+The repository still retains v0.10.4 as the earlier stable firmware, but that
+release predates those two connections and is not the correct choice for this
+build.
 
 ## 2. Connect the controller
 

@@ -1,6 +1,6 @@
 site_name: RotaryCell · Build guide
 site_description: Bring a classic telephone back into everyday use.
-site_url: https://fregacmols.github.io/RotaryCell/
+site_url: https://evilroot.net/RotaryCell/
 site_dir: site-build
 use_directory_urls: false
 repo_url: https://github.com/fregacmols/RotaryCell
@@ -45,7 +45,7 @@ nav:
       - Inspect the controller: lilygo-inspection.md
   - 3 · Boards and wiring:
       - Populate the carrier: assembly.md
-      - Prepare the cables: harnesses.md
+      - Finish the board cables: harnesses.md
       - Battery leads: battery.md
   - 4 · Firmware and cellular setup:
       - Upload the firmware: firmware.md

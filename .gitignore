@@ -33,4 +33,5 @@ development/firmware/*.zip
 
 # Generated standalone build-guide output
 /guide/site-build/
+/.tooling/
 /guide/.venv/

@@ -40,7 +40,16 @@ Place the insulated 21700 between the LilyGO and the upper board. The lead lengt
 
 ![Battery installed between the LilyGO and the other assemblies](images/phone-battery-installed.jpg)
 
-Connect the carrier's two-wire `NETWORK` harness to the original telephone network block. Green is tip and red is ring; the photograph shows the two terminals used in this build.
+Connect the carrier's two-wire `NETWORK` harness to the telephone's original
+incoming-line points on the network block. Green is tip and red is ring in this
+build.
+
+!!! warning "Network blocks vary"
+    The photograph shows one particular telephone. Trace the original incoming
+    line connection or consult the schematic for your telephone; do not copy
+    these terminal positions or rely on its wire colors for a different model
+    or revision. This internal pair must never be connected to the public
+    telephone network or energized premises wiring.
 
 ![Green tip and red ring leads connected to the telephone network block](images/phone-network-tip-ring.jpg)
 

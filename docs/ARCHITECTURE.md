@@ -33,12 +33,12 @@ RotaryCell is an internal, reversible interface. The original telephone remains 
 - A single 21700 cell connects to the LilyGO `BAT` and `BATN` battery points through a harness.
 - The AG1171 carrier is supplied from the LilyGO `VBAT` header pad and LilyGO system GND. Its ground must not be connected directly to `BATN`, because `BATN` is the cell side of the LilyGO's low-side battery protector.
 - The LilyGO's original 18650 holder is removed.
-- The telephone's RJ11 jack is used only to deliver regulated 5 V to the LilyGO charging input on the designated pins; it is separate from the AG1171 VPWR path.
+- The current build replaces the telephone's rear connector with a printed USB-C insert. Only regulated 5 V and system GND connect to the LilyGO charging input; this remains separate from the AG1171 VPWR path.
 
 ## Firmware GPIO assignments
 
-Stable firmware v0.10.4 defines the established telephone and modem signals.
-Development firmware v0.11.1-dev also uses the reset and AG1171 power-down
+Version 0.10.4 is retained as the earlier stable release. The illustrated PCB
+build requires v0.11.1-dev, which adds the reset and AG1171 power-down
 assignments shown below.
 
 | Function | ESP32-S3 GPIO |
@@ -57,6 +57,6 @@ assignments shown below.
 | Hardware reset trigger | 35 (v0.11.1-dev) |
 | AG1171 PD | 21 (v0.11.1-dev; high-impedance normally, LOW to power down) |
 
-The GPIO35 reset trigger and GPIO21 AG1171 power-down control have passed initial
-testing on assembled hardware. They remain in the development firmware while
-automatic modem-failure detection and longer endurance testing continue.
+The GPIO35 reset trigger and GPIO21 AG1171 power-down control have passed testing
+on assembled hardware. They remain in development-labelled firmware while
+automatic modem-failure detection continues.

@@ -1,10 +1,11 @@
 # Project status
 
-**Baseline date:** September 18, 2026
+**Baseline date:** September 25, 2026
 
 **Stable firmware:** v0.10.4
 **Active development firmware:** v0.11.1-dev
-**Hardware phase:** Multiple integrated PCB assemblies operational; extended features under endurance testing
+**Guide firmware:** v0.11.1-dev
+**Hardware phase:** Multiple complete PCB-based conversions operational and documented; reliability work continues
 
 ## Tested on the hand-wired prototype
 
@@ -41,7 +42,7 @@ No reliable automatic signature for the failure has yet been identified, so reco
 
 *First assembled Audio/Reset A4 and AG1171 carrier boards connected to the LilyGO during initial functional bench testing. This shows the development setup and loose test wiring, not the final installation or an authoritative wiring reference.*
 
-The Audio and Reset A4 board is approximately 35.00 x 25.15 mm. The notched AG1171 carrier has an overall Gerber envelope of approximately 54.91 x 42.67 mm.
+The Audio and Reset A4 board is approximately 35.00 x 25.15 mm. The manufactured AG1171 carrier is approximately 47.37 x 42.67 mm.
 
 ## v0.11.1-dev validation completed so far
 
@@ -50,18 +51,17 @@ The Audio and Reset A4 board is approximately 35.00 x 25.15 mm. The notched AG11
 - Paired reset diagnostics survive the power cycle and are stored in the ESP32 persistent event log.
 - Maintenance Wi-Fi can be started from the dial or USB console, held open for an extended session, and reopened automatically after a successful web firmware update.
 - The maintenance page can download the persistent event log and microSD power-log files.
-- AG1171 idle power saving reduced a measured 11.17-hour Wi-Fi-off test to a 104.44 mA average, implying roughly 44–50 practical standby hours from the tested 5800 mAh cell.
+- AG1171 idle power saving produced a 104.44 mA average during a measured 11.17-hour Wi-Fi-off test, implying roughly 44–50 practical standby hours from the documented 5330 mAh Samsung 58E cell.
 - The optional INA226/microSD logger records usable current data. Its bus-voltage and calculated-power columns currently remain zero and are not yet authoritative.
 
 Large microSD downloads deliberately pause sampling while the synchronous transfer is in progress. A test download of an approximately 19 MB log produced a 44.9-second gap; this is acceptable for maintenance use and is recorded for future asynchronous work.
 
-## Next validation milestone
+## Remaining development work
 
-1. Record clear photographs, fitted component values, polarities, connector orientations, and any assembly rework from the first build.
-2. Record repeatable measurements and individual pass/fail results for audio, dialing, hook detection, calling, ringing, and charging.
-3. Identify a dependable modem-failure signature and add conservative automatic recovery.
-4. Correct or explicitly remove the invalid INA226 bus-voltage and calculated-power fields.
-5. Repeat incoming, outgoing, ringing, charging, battery, and endurance tests on complete assemblies.
-6. Promote a reviewed development build to a new stable release only after those results are documented.
+1. Identify a dependable modem-failure signature and add conservative automatic recovery.
+2. Correct or explicitly remove the invalid INA226 bus-voltage and calculated-power fields.
+3. Continue endurance testing on complete assemblies and record failures against the exact hardware and firmware revision.
+4. Review v0.11.1-dev and promote the tested guide firmware to a numbered stable release.
 
-Until these steps pass, the ordered PCBs should be considered **working development hardware**, not a production-qualified design.
+The current boards are tested open hardware used in multiple working builds.
+They have not undergone formal production qualification or regulatory testing.

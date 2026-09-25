@@ -1,6 +1,9 @@
 # AG1171 Carrier Through-Hole — as ordered
 
-Submitted to JLCPCB on August 28, 2026. These files are an immutable record of the order and have not yet been validated on assembled hardware.
+Submitted to JLCPCB on August 28, 2026. These files are an immutable record of
+the order. Boards from this package have been hand assembled and tested in
+multiple working RotaryCell conversions, including calling, ringing, audio and
+GPIO21-controlled idle power saving.
 
 | File type | Included |
 | --- | --- |

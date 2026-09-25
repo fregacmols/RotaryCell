@@ -1,4 +1,7 @@
-# First-board bring-up
+# First-board bring-up record
+
+> This is the staged engineering procedure used for the first PCB assemblies.
+> For routine construction, follow the [illustrated build guide](../guide/README.md).
 
 This checklist applies to the August 2026 Audio and Reset A4 and AG1171 through-hole carrier orders.
 
@@ -44,7 +47,7 @@ This checklist applies to the August 2026 Audio and Reset A4 and AG1171 through-
 - Dial, reorder, and howler tones
 - Bidirectional audio quality
 - Maintenance Wi-Fi and persistent logging
-- Charging through the RJ11 charging pins
+- Charging through the rear USB-C breakout
 - Battery monitoring
 - Extended powered endurance test
 - Forced hardware-reset recovery test
