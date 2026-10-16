@@ -3,11 +3,13 @@
 This directory contains development firmware and the field-used 0.12 baseline.
 The illustrated guide firmware remains under `../firmware/current`.
 
-- `ESP-RotaryCell_v0.12.0-dev`: working 0.12 baseline, with organized
+- `ESP-RotaryCell_v0.12.0`: working 0.12 baseline, with organized
   maintenance navigation, call filters/history, scheduled/manual DND,
   configurable maintenance Wi-Fi, and persistent power-saving controls.
-  Reported in use for several days on two phones without notable problems as
-  of October 16, 2026. Bug fixes and minor feature additions or changes will
+  The earlier development-labelled image was reported in use for several days
+  on two phones without notable problems as of October 16, 2026. The public
+  image removes the `-dev` label and disables INA226/microSD diagnostic power
+  logging by default. Bug fixes and minor feature additions or changes will
   use 0.12.x revisions. Its README, OTA binary, build record, and regression
   checklist are included in the same directory.
 

@@ -1,24 +1,25 @@
 {
-  "version": "0.12.0-dev",
-  "packaged_at_utc": "2026-10-10T20:19:11.297056+00:00",
+  "version": "0.12.0",
+  "packaged_at_utc": "2026-10-16T18:31:24.2624829Z",
   "board": "ESP32S3 Dev Module",
   "esp32_core": "3.3.11",
   "partition_scheme": "min_spiffs",
   "image_type": "Application-only OTA image; not a merged factory image",
-  "binary_bytes": 1170416,
-  "binary_sha256": "251d5fe9a2e466e3047812c697e576b87a3f813eece1c0d0e11e4c71858d2c82",
+  "development_power_logging_enabled": false,
+  "binary_bytes": 1141664,
+  "binary_sha256": "98d9892a98a25199d3947fab9cc3a275f33b97de464753cadbac842adaea16f0",
   "source_sha256": {
     "BatteryMonitor.cpp": "a0f06c378a5fd2147f1dc53245f95ab5e3c2f2dbed7b78ac0826650b81b363b1",
     "BatteryMonitor.h": "2e7cdf9922bace3644375b8adfa1ee9d7d67bc08a5fdbdee0dc0307ef0a1b55a",
     "CallPolicy.h": "1be89caf01c4d4a8ce6606fc11f5879567c5bfefd6bc745ad3edbc909ad1f701",
     "ClockManager.cpp": "38f1382e7637c992386c48b8dc9ddab190b419637be2a51a4c58d0a86e29d6a0",
     "ClockManager.h": "8a211461c6e83bbd65389c43d7aaabec72006b4b392991b8ad4326fc0942a1c0",
-    "Config.h": "b5d3e29a0bf577f60fcdd2230c119203a5123db24f82093726ff78555ece60f5",
+    "Config.h": "3bfa61a8087505bd37966e24b974fa33b0e43faeafc64d276c2b42284d58a04d",
     "Console.cpp": "d0b0240b73afb84f55b0b818b054a6c3e16cb1b6db4682d2cea63b6a862ed57d",
     "Console.h": "4129f5d4185cc30da712d68a06e5dd6fc8ecc8735e71209bd3dd9d72be109d6d",
     "DialToneGenerator.cpp": "3af98f587968e954c69ea66623ae7b9319df0e068763c49f7920439fe205f687",
     "DialToneGenerator.h": "f61f83daf583e6289ce44d493b7ba04c064ffe16545abc1466c382dca9a7f022",
-    "ESP-RotaryCell_v0.12.0-dev.ino": "81fc2b4f329e9087a03ff8cb2959cdac23cd7d0456fe699253258d5c8930724c",
+    "ESP-RotaryCell_v0.12.0.ino": "81fc2b4f329e9087a03ff8cb2959cdac23cd7d0456fe699253258d5c8930724c",
     "EventLog.cpp": "1880140ce5e63aaacb8705639ef4176bb509cb4c8d6e3b05cb473bcdb4a10b60",
     "EventLog.h": "359abd79864068df15737f9642985ab0d442091d4cf0ff54c8ceac96fa5bcccc",
     "HardwareControl.cpp": "a9c5320cdaed223b76018b42a67b90316be8b8d82c1d05bf8ecd786ea888cadd",
@@ -43,8 +44,10 @@
   "validation": [
     "Arduino compile passed",
     "PolicyChecks.cpp compile-time assertions passed",
-    "maintenance-ui.test.cjs passed"
+    "maintenance-ui.test.cjs passed",
+    "Built source verified against release source"
   ],
   "hardware_tested": false,
+  "field_use_note": "Earlier 0.12.0-dev image used for several days on two phones without notable problems; this release changes the version label and disables INA226/microSD diagnostic power logging.",
   "visual_browser_tested": false
 }

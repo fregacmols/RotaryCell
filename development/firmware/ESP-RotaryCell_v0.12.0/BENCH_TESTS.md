@@ -1,4 +1,4 @@
-# v0.12.0-dev bench validation
+# v0.12.0 bench validation
 
 Record phone hardware, modem firmware, carrier, and application binary hash for
 each run. Keep the supported v0.11.1-dev application available for rollback.

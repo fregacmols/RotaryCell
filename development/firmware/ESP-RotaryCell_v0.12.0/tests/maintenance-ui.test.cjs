@@ -36,7 +36,7 @@ const document={getElementById:id=>{assert(ids.has(id),'missing ID '+id);return 
 }};
 const fetch=async(url,options={})=>{
  if(options.method==='POST')posts.push({url,body:options.body});
- let data=url==='/api/settings'?settings:url==='/api/history'?history:url==='/api/power-files'?[]:{version:'0.12.0-dev',wifiTimeoutEnabled:true,wifiSecondsRemaining:600};
+ let data=url==='/api/settings'?settings:url==='/api/history'?history:url==='/api/power-files'?[]:{version:'0.12.0',wifiTimeoutEnabled:true,wifiSecondsRemaining:600};
  return {ok:true,json:async()=>data,text:async()=>options.method==='POST'?'Saved':'',headers:{get:()=>0}};
 };
 const context=vm.createContext({document,fetch,URLSearchParams,Date,console,setInterval:()=>{},confirm:()=>true,alert:()=>{}});

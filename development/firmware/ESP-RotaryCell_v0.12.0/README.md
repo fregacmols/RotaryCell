@@ -1,10 +1,12 @@
-# RotaryCell v0.12.0-dev — first usability build
+# RotaryCell v0.12.0 — first usability build
 
 Usability release based on v0.11.1-dev. As of October 16, 2026, the owner reports
 several days of use on two phones with no notable problems. This is the working
 0.12 baseline; bug fixes and minor feature additions or changes will use 0.12.x
-revisions. The source directory and binary retain their original 0.12.0-dev
-identifiers so the field-tested build remains identifiable.
+revisions. The release removes the former `-dev` suffix from the source,
+displayed version, and OTA filename. The public OTA image also disables optional
+INA226/microSD diagnostic power logging. Field use reported above
+was on the earlier development-labelled image, not this rebuilt image.
 
 The guide firmware and downloads remain v0.11.1-dev. The bench checklist below
 remains available for targeted regression checks; its edge cases have not all
@@ -94,9 +96,10 @@ fresh-device filesystem initialization needs a separate deliberate procedure.
 
 Use the v0.11.1 build environment in the root `FIRMWARE_BUILDING.md`: ESP32 core
 3.3.11, ESP32S3 Dev Module, 16 MB QIO, `min_spiffs` with OTA, hardware CDC, no PSRAM.
-The instrumented-phone `ENABLE_DEVELOPMENT_POWER_LOGGING = true` configuration is
-retained. Set false for a phone without INA226/microSD hardware. Its pre-existing
-zero voltage/power-field issue is outside this revision.
+The public build uses `ENABLE_DEVELOPMENT_POWER_LOGGING = false`: the INA226 and
+microSD power logger are not initialized, and their diagnostic status panel is
+hidden. Instrumented test phones can opt in by setting it true and rebuilding.
+The logger's pre-existing zero voltage/power-field issue remains unresolved.
 
 Automated checks:
 

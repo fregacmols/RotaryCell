@@ -8,12 +8,14 @@
 
 ## October 16, 2026: working 0.12 baseline
 
-The owner reports several days of v0.12.0-dev use on two phones without notable
-problems. The complete source, application-only OTA binary, build record, and
+The owner reports several days of the v0.12.0 development-labelled image on
+two phones without notable problems. The complete source, application-only OTA binary, build record, and
 regression checklist are published under
-[`development/firmware/ESP-RotaryCell_v0.12.0-dev`](development/firmware/ESP-RotaryCell_v0.12.0-dev/).
+[`development/firmware/ESP-RotaryCell_v0.12.0`](development/firmware/ESP-RotaryCell_v0.12.0/).
 This is the working 0.12 baseline. Bug fixes and minor feature additions or
-changes will use 0.12.x revisions. The original build identifiers are retained.
+changes will use 0.12.x revisions. The release removes the `-dev` suffix and
+rebuilds the public OTA image with optional INA226/microSD diagnostic power
+logging disabled. That rebuilt image has not yet been field-tested.
 
 Compilation, policy assertions, and automated maintenance UI checks passed.
 The field-use report does not establish that every targeted bench edge case

@@ -29,7 +29,7 @@ constexpr uint16_t HARD_RESET_TRIGGER_PULSE_MS = 20;
 // Set false for a normal/public build. When false, the INA226, SD card,
 // and their maintenance-page status are not initialized or displayed.
 // -----------------------------------------------------------------------------
-constexpr bool ENABLE_DEVELOPMENT_POWER_LOGGING = true;
+constexpr bool ENABLE_DEVELOPMENT_POWER_LOGGING = false;
 
 constexpr uint8_t PIN_QWIIC_SDA = 3;
 constexpr uint8_t PIN_QWIIC_SCL = 2;
@@ -104,7 +104,7 @@ constexpr uint32_t CADENCE_RING_OFF_MS   = 4000;
 // -----------------------------------------------------------------------------
 // v0.9 maintenance Wi-Fi / web console
 // -----------------------------------------------------------------------------
-constexpr const char* FIRMWARE_VERSION = "0.12.0-dev";
+constexpr const char* FIRMWARE_VERSION = "0.12.0";
 constexpr const char* WIFI_AP_SSID = "ESP-RotaryCell";
 // Change this before deployment if the phone will be used around untrusted people.
 // WPA2 requires at least eight characters.
