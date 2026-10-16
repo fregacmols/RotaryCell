@@ -6,6 +6,19 @@
 **Earlier stable firmware retained for existing installations:** v0.10.4
 **Hardware phase:** Multiple complete PCB-based conversions operational and documented; reliability work continues
 
+## October 16, 2026: working 0.12 baseline
+
+The owner reports several days of v0.12.0-dev use on two phones without notable
+problems. The complete source, application-only OTA binary, build record, and
+regression checklist are published under
+[`development/firmware/ESP-RotaryCell_v0.12.0-dev`](development/firmware/ESP-RotaryCell_v0.12.0-dev/).
+This is the working 0.12 baseline. Bug fixes and minor feature additions or
+changes will use 0.12.x revisions. The original build identifiers are retained.
+
+Compilation, policy assertions, and automated maintenance UI checks passed.
+The field-use report does not establish that every targeted bench edge case
+has been verified. The illustrated guide firmware remains v0.11.1-dev.
+
 ## Tested on the hand-wired prototype
 
 - Original rotary dial pulse decoding
