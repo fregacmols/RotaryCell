@@ -3,6 +3,9 @@
 This directory contains development firmware and the field-used 0.12 baseline.
 The illustrated guide firmware remains under `../firmware/current`.
 
+- [ESP-RotaryCell_v0.12.1](firmware/ESP-RotaryCell_v0.12.1/): latest 0.12
+  development build, with longer dialing timeouts and an application-only OTA image.
+
 - `ESP-RotaryCell_v0.12.0`: working 0.12 baseline, with organized
   maintenance navigation, call filters/history, scheduled/manual DND,
   configurable maintenance Wi-Fi, and persistent power-saving controls.

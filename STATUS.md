@@ -6,6 +6,14 @@
 **Earlier stable firmware retained for existing installations:** v0.10.4
 **Hardware phase:** Multiple complete PCB-based conversions operational and documented; reliability work continues
 
+## November 25, 2026 - v0.12.1 dialing timeout update
+
+The latest 0.12 development build includes a 25-second initial dial-tone wait,
+a 15-second interdigit wait, and a 5-second wait after 10 digits (11 with a
+leading 1). An in-progress pulse train can finish before the timeout is evaluated.
+The source, application-only OTA image, and bench checklist are in
+[v0.12.1](development/firmware/ESP-RotaryCell_v0.12.1/).
+
 ## October 16, 2026: working 0.12 baseline
 
 The owner reports several days of the v0.12.0 development-labelled image on
@@ -65,7 +73,7 @@ The Audio and Reset A4 board is approximately 35.00 x 25.15 mm. The manufactured
 - Paired reset diagnostics survive the power cycle and are stored in the ESP32 persistent event log.
 - Maintenance Wi-Fi can be started from the dial or USB console, held open for an extended session, and reopened automatically after a successful web firmware update.
 - The maintenance page can download the persistent event log and microSD power-log files.
-- AG1171 idle power saving produced a 104.44 mA average during a measured 11.17-hour Wi-Fi-off test, implying roughly 44–50 practical standby hours from the documented 5330 mAh Samsung 58E cell.
+- AG1171 idle power saving produced a 104.44 mA average during a measured 11.17-hour Wi-Fi-off test, implying roughly 44-50 practical standby hours from the documented 5330 mAh Samsung 58E cell.
 - The optional INA226/microSD logger records usable current data. Its bus-voltage and calculated-power columns currently remain zero and are not yet authoritative.
 
 Large microSD downloads deliberately pause sampling while the synchronous transfer is in progress. A test download of an approximately 19 MB log produced a 44.9-second gap; this is acceptable for maintenance use and is recorded for future asynchronous work.
