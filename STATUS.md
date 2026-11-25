@@ -14,6 +14,8 @@ leading 1). An in-progress pulse train can finish before the timeout is evaluate
 The source, application-only OTA image, and bench checklist are in
 [v0.12.1](development/firmware/ESP-RotaryCell_v0.12.1/).
 
+The owner reports trying v0.12.1 on a working RotaryCell phone.
+
 ## October 16, 2026: working 0.12 baseline
 
 The owner reports several days of the v0.12.0 development-labelled image on
